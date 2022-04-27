@@ -1,12 +1,12 @@
-import "./App.css";
+import React from "react";
+
 
 function App() {
-  return (
-    <div>
-      <h2>jjj</h2>
-      "research project management tool front end"
-    </div>
-  );
+    return (
+        <h1>
+            Welcome to React App thats build using Webpack and Babel separately
+        </h1>
+    )
 }
 
-export default App;
+export default App
