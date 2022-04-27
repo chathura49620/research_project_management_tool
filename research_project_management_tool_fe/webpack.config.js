@@ -32,7 +32,7 @@ module.exports={
         /** "port" 
          * port of dev server
         */
-        port: "3002",
+        port: "3003",
         /** "static" 
          * This property tells Webpack what static file it should serve
         */
