@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
+const App = () => {
+  
+  return (
+    <div>
+    hello world!
+    
+    </div>
+  );
+};
 
-function App() {
-    return (
-        <h1>
-            Welcome to React App thats build using Webpack and Babel separately
-        </h1>
-    )
-}
-
-export default App
+export default App;
