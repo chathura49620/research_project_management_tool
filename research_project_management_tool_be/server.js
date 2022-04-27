@@ -14,12 +14,12 @@ app.use(express.json());
 //connect mongo db database
 connectDB();
 
-//load routers
-// app.use("/", require("./src/routes/router"));
+const userRouter = require("./src/routes/users");
 
+//load routers
+app.use("/users", userRouter);
+app.use("/", require("./src/routes/router"));
 
 app.listen(port, () => {
   console.log(`Server is Running on port: ${port}`);
 });
-
-
