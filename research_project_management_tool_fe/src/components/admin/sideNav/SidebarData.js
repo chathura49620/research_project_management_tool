@@ -49,8 +49,8 @@ export const SidebarData = [
   },
 
   {
-    title: "Wasted Items",
-    path: "/it/new/wasted/item/my",
+    title: "view members",
+    path: "/viewMembers",
     icon: <IoIcons.IoMdColorFill />,
   },
   {

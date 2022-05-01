@@ -4,17 +4,20 @@ import styled from "styled-components";
 
 const SidebarLink = styled(Link)`
   display: flex;
-  color: #e1e9fc;
+  color:  #fdfefe
+  ;
+
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   list-style: none;
   height: 60px;
+  border-bottom:  solid #17202a;
   text-decoration: none;
   font-size: 18px; 
 
   &:hover {
-    background: #252831;
+    background:  #d0d3d4 ;
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }

@@ -4,6 +4,7 @@ import AdminDashboard from './pages/adminDashboard';
 import RegisterUser from './components/admin/forms/registerUser';
 import LoginUser from './components/admin/forms/loginUser';
 import Sidebar from './components/admin/sideNav/Sidebar';
+import ViewMember from './pages/viewMembers';
 
 class Dashboard extends Component {
     state = {  } 
@@ -23,6 +24,8 @@ class Dashboard extends Component {
             <Route path="/" exact component={AdminDashboard}></Route>
             <Route path="/register" exact component={RegisterUser} />
             <Route path="/login" exact component={LoginUser} />
+            <Route path="/viewMembers" exact component={ViewMember} />
+
             
           </div>
 

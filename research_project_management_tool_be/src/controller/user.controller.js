@@ -1,5 +1,28 @@
 const User = require("../model/user.model")
 
+
+exports.getAllMembers = async(req, res) => {
+
+  try{
+    const users =   await User.find();
+
+    res.json(users);
+
+  }catch(err){
+
+res.json({
+  status: "error", error: "Error happened" 
+})
+
+  }
+      
+ 
+   
+ }
+
+
+
+
 exports.create = async(req, res) => {
   console.log("hello i am in the user controller");
   const firstName = req.body.firstName;
@@ -63,3 +86,6 @@ exports.getLogins = async(req, res) => {
  
   
 }
+
+
+
