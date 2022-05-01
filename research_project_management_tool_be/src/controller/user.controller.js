@@ -2,16 +2,22 @@ const User = require("../model/user.model")
 
 exports.create = async(req, res) => {
   console.log("hello i am in the user controller");
-  const name = req.body.name;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
   const email = req.body.email;
+  const address = req.body.address;
+  const contactNumber = req.body.contactNumber;
+  const age = req.body.age;
   const password = req.body.password;
+  const type = req.body.type;
 
   try{
-    const newUser = new User({name, email, password});
+    const newUser = new User({firstName, lastName, email, address, contactNumber,
+      age, password, type});
 
     await  newUser.save();
   
-    res.json({ status: "ok", name: name });
+    res.json({ status: "ok", name: firstName });
 
 
   }catch(err){
