@@ -48,7 +48,18 @@ class LoginUser extends FormSuper {
     const data = await response.json();
 
 
-    console.log(data);
+    if(data.status === 'ok'){
+      console.log("logged")
+      localStorage.setItem("logged", "kk");
+      console.log(localStorage.getItem('logged'))
+      window.location.href = "/";
+      
+    }
+    else{
+      console.log("notlog")
+    }
+
+   // console.log(data);
 
 
 
