@@ -44,7 +44,7 @@ export const SidebarData = [
 
   {
     title: "Add a Member",
-    path: "/register",
+    path: "/registerMember",
     icon: <IoIcons.IoMdTime />,
   },
 
@@ -54,11 +54,21 @@ export const SidebarData = [
     icon: <IoIcons.IoMdColorFill />,
   },
   {
-    title: "Item Requests",
-    path: "/requests/for/items",
+    title: "Research Groups",
+    path: "/groups",
     icon: <IoIcons.IoMdPaperPlane />,
   },
 
+  {
+    title: "documents",
+    path: "/documents",
+    icon: <IoIcons.IoMdPaperPlane />,
+  },
+  {
+    title: "uploaded",
+    path: "/uploaded",
+    icon: <IoIcons.IoMdPaperPlane />,
+  },
   {
     title: "My Profile",
     path: "/myprofile",

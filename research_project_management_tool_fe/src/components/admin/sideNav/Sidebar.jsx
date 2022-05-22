@@ -9,8 +9,8 @@ import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
 const Nav = styled.div`
-  background:    #fdfefe ;
-  height: 80px; 
+  background: #fdfefe;
+  height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -26,8 +26,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background:    #1a5276 
-  ;
+  background: #2471a3;
   width: 250px;
   height: 100vh;
   border-style: solid;
@@ -56,17 +55,20 @@ const Sidebar = () => {
     <>
       <IconContext.Provider value={{ color: " #17202a " }}>
         <Nav>
-         
           <NavIcon to="#">
-            
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
           <h2>Research Project Management Tool</h2>
-          <button className='btn btn-sm btn-primary' onClick={() =>{
-            localStorage.removeItem("logged");
-            window.location.href = "/"
-            
-            }}>Log out</button><br></br>
+          <button
+            className="btn btn-sm btn-danger"
+            onClick={() => {
+              localStorage.removeItem("logged");
+              window.location.href = "/";
+            }}
+          >
+            Log out
+          </button>
+          <br></br>
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>

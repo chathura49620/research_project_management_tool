@@ -16,8 +16,8 @@ const Select = ({ name, label, options, error, ...rest }) => {
         <option value="" />
 
         {options.map((opt) => (
-          <option key={opt._id} value={opt.categoryName}>
-            {opt.categoryName}
+          <option key={opt.id} value={opt.type}>
+            {opt.type}
           </option>
         ))}
       </select>

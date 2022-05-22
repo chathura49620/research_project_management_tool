@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TableViewMember = ({filteredItems, onRemove}) => {
+const TableViewMember = ({filteredItems, onRemove, onModalView}) => {
     return (  
 
 <table class="table">
@@ -32,7 +32,7 @@ const TableViewMember = ({filteredItems, onRemove}) => {
       <td>{member.contactNumber}</td>
       <td>{member.age}</td>
       <td>{member.type}</td>
-      <td><button  className='btn btn-sm btn-primary'>modify</button></td>
+      <td><button onClick={() => onModalView(member)}  className='btn btn-sm btn-primary'>modify</button></td>
       <td><button onClick={() => onRemove(member._id)} className='btn btn-sm btn-danger'>remove</button></td>
       
     </tr>

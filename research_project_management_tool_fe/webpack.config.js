@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -20,6 +20,10 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts"],
+    fallback: {
+      fs: false,
+      path: false,
+    },
   },
   module: {
     rules: [
@@ -28,9 +32,8 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader",
       },
-      { test: /\.css$/, use: ['style-loader', 'css-loader']},
-      { test: /\.sass$/, use: 'sass-loader' },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.sass$/, use: "sass-loader" },
     ],
   },
-
 };

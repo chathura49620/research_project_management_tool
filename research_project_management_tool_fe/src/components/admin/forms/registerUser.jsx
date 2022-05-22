@@ -23,6 +23,7 @@ class RegisterUser extends FormSuper {
       type: "",
     },
     errors: {},
+    memberTypes: [{id: 1, type: 'Panel Member'}, {id: 2, type: 'Supervisor'}]
 
    } 
 
@@ -93,9 +94,9 @@ class RegisterUser extends FormSuper {
       <React.Fragment>
     
     <div className="row mt-4">
-      <div className="col-1"></div>
+      <div className="col-3"></div>
       <div className="col" style={{backgroundColor:"#F2F3F4"}}>
-      <h1 style={{color:"#1F618D"}}>Register new Member</h1>
+      <h1>Register new Member</h1>
           <form onSubmit={this.handleSubmit}>
             {this.renderInput("firstName", "First Name")}
             {this.renderInput("lastName", "Last Name")}
@@ -104,7 +105,7 @@ class RegisterUser extends FormSuper {
             {this.renderInput("contactNumber", "Contact Number")}
             {this.renderInput("age", "Age")}
             {this.renderInput("password", "password")}
-            {this.renderInput("type", "Member Type")}
+            {this.renderSelect("type", "Type", this.state.memberTypes)}
             {this.renderButton("Register User")}
           </form>
         

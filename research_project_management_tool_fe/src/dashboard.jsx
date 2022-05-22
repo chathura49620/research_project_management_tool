@@ -1,54 +1,39 @@
-import React, { Component } from 'react'
-import { Route } from 'react-router-dom';
-import AdminDashboard from './pages/adminDashboard';
-import RegisterUser from './components/admin/forms/registerUser';
-import LoginUser from './components/admin/forms/loginUser';
-import Sidebar from './components/admin/sideNav/Sidebar';
-import ViewMember from './pages/viewMembers';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import RegisterUser from "./components/admin/forms/registerUser";
+import LoginUser from "./components/admin/forms/loginUser";
+import Sidebar from "./components/admin/sideNav/Sidebar";
+import ViewMember from "./pages/viewMembers";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+import ViewResearchGroup from "./pages/Admin/ViewResearchGroups";
+import AddDocuments from "./components/admin/forms/addDocuments";
+import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 
 class Dashboard extends Component {
-    state = {  } 
-    render() { 
+  state = {};
+  render() {
+    console.log(localStorage.getItem("logged"));
 
-        console.log(localStorage.getItem('logged'));
-
-        if(localStorage.getItem('logged') === 'kk'){
-
-                
+    if (localStorage.getItem("logged") === "ok") {
+      if (localStorage.getItem("type") === "Admin") {
         return (
-
-           
-                
-            <div>
-            <Sidebar/> 
+          <div>
+            <Sidebar />
             <Route path="/" exact component={AdminDashboard}></Route>
-            <Route path="/register" exact component={RegisterUser} />
-            <Route path="/login" exact component={LoginUser} />
-            <Route path="/viewMembers" exact component={ViewMember} />
-
-            
+            <Route path="/registerMember" component={RegisterUser} />
+            <Route path="/viewMembers" component={ViewMember} />
+            <Route path="/groups" component={ViewResearchGroup} />
+            <Route path="/documents" component={AddDocuments} />
+            <Route path="/uploaded" component={ViewUploadedDocuments} />
           </div>
-
-            
-            
-
         );
-        }
-
-        else{
-
-            return (
-
-           
-               <LoginUser/>
-                
-    
-            ); 
-        }
-
-
-
+      } else if (localStorage.getItem("type") === "Panel Member") {
+      } else {
+      }
+    } else {
+      return <LoginUser />;
     }
+  }
 }
- 
+
 export default Dashboard;
