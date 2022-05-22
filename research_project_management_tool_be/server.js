@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./src/database/connection");
+const marking_rubrics = require('./src/routes/marking-rubric.router')
 
 //get env file configarations
 require("dotenv").config();
@@ -18,6 +19,7 @@ const userRouter = require("./src/routes/users");
 
 //load routers
 app.use("/users", userRouter);
+app.use("/api", marking_rubrics);
 app.use("/", require("./src/routes/router"));
 
 app.listen(port, () => {

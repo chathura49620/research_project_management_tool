@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { Component } from 'react';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
-  
-  return (
-    <div>
-    hello world!
-    
-    </div>
-  );
-};
-
+import MarkingFilesUploadComponent from './component/EvaPanel/marking-files-upload-component';
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <MarkingFilesUploadComponent />
+      </div>
+    );
+  }
+}
 export default App;

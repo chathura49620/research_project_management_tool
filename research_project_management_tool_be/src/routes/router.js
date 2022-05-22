@@ -11,4 +11,9 @@ route.get("/api/topic-details/", contoller.topicDetails.find);
 route.put("/api/topic-details/", contoller.topicDetails.update);
 route.delete("/api/topic-details/", contoller.topicDetails.delete);
 
+//Marking Rublic Topic APIs
+route.get("/api/marking-rubrics", contoller.markingrubricsDetails.find);
+// route.put("/api/topic-details/", contoller.topicDetails.update);
+// route.delete("/api/topic-details/", contoller.topicDetails.delete);
+
 module.exports = route;
