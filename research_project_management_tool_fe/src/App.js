@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import LoginUser from "./components/admin/forms/loginUser";
+import RegisterUser from "./components/admin/forms/registerUser";
+import Dashboard from "./dashboard";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 
-import MarkingFilesUploadComponent from './component/EvaPanel/marking-files-upload-component';
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <MarkingFilesUploadComponent />
-      </div>
-    );
-  }
-}
+const App = () => {
+  
+  return (
+  
+      // <LoginUser/>
+      <Dashboard/>
+     
+   
+    
+    // <AdminDashboard></AdminDashboard>
+      
+   
+  );
+};
+
 export default App;

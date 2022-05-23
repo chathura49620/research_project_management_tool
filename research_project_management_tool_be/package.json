@@ -12,9 +12,14 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+<<<<<<< HEAD
     "mongoose": "^6.3.1",
     "multer": "^1.4.4",
     "uuid": "^8.3.2",
     "uuidv4": "^6.2.13"
+=======
+    "express-fileupload": "^1.3.1",
+    "mongoose": "^6.3.1"
+>>>>>>> feature/admin_management
   }
 }
