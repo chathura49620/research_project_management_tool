@@ -20,12 +20,8 @@ connectDB();
 const userRouter = require("./src/routes/users");
 
 //load routers
-<<<<<<< HEAD
 app.use("/users", userRouter);
 app.use("/api", marking_rubrics);
-=======
-//app.use("/users", userRouter);
->>>>>>> feature/admin_management
 app.use("/", require("./src/routes/router"));
 
 app.listen(port, () => {
