@@ -42,7 +42,22 @@ class Dashboard extends Component {
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
           </div>
         );
-      } else {
+      }
+      else if (localStorage.getItem("type") === "Student") {
+        return (
+          <div>
+          
+          </div>
+        );
+      }
+      else if (localStorage.getItem("type") === "Superviosor") {
+        return (
+          <div>
+           
+          </div>
+        );
+      }
+       else {
       }
     } else {
       return <LoginUser />;
