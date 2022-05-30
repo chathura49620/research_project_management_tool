@@ -14,7 +14,7 @@ import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
 
-
+import StudentDashboard from './pages/Student/StudentDashboard';
 
 class Dashboard extends Component {
   state = {};
@@ -38,15 +38,17 @@ class Dashboard extends Component {
         return (
           <div>
             <EvaPanelSideNav />
-            <Route path="/" exact component={EvaPanelDashboard}></Route>
-            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+            <Route path="/" exact component={StudentDashboard}></Route>
+            
           </div>
         );
       }
       else if (localStorage.getItem("type") === "Student") {
         return (
           <div>
-          
+         
+            <Route path="/" exact component={AdminDashboard}></Route>
+            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
           </div>
         );
       }

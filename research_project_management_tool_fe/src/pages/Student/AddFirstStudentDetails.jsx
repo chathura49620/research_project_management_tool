@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
 import "./styles.css";
-import addorder from "../../pages/assets/addorderpic.png";
+
 
 class AddFirstStudentDetails extends Component {
   constructor(props) {

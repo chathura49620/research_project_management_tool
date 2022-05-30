@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 
 
-class AdminDashboard extends Component {
+class StudentDashboard extends Component {
   state = {
     reservedRooms: [],
     availableRooms: [],
@@ -65,4 +65,4 @@ const Container = styled.div`
   }
 `;
 
-export default AdminDashboard;
+export default StudentDashboard;
