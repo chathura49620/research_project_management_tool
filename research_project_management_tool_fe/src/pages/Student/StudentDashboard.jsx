@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Table, Button, ButtonToolbar } from 'react-bootstrap';
-import MainContent from "./TravellerDashboard/MainContent"
+import MainContent from "./StudentDashboard/MainContent"
 //import "./TravellerDashboard/dashboard.css"
 
 import styled from "styled-components";

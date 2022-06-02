@@ -25,7 +25,7 @@ route.get("/api/marking-rubrics", contoller.markingrubricsDetails.find);
 route.post("/api/topic-details/", contoller.topicDetails.create);
 route.get("/api/topic-details/", contoller.topicDetails.find);
 route.put("/api/topic-details/", contoller.topicDetails.update);
-route.delete("/api/topic-details/", contoller.topicDetails.delete);
+//route.delete("/api/topic-details/", contoller.topicDetails.delete);
 
 
 //Student Group Registration APIs
@@ -40,5 +40,25 @@ route.get("/api/supervisorEmail-details/", contoller.superviserEmailDet.find);
 
 //Supervisor Topic APIs
 route.put("/api/topic-details-update/", contoller.topicApproveAndReject.update);
+
+//Evaluvation Panel Member Profile Registration APIs
+route.post("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.create);
+route.get("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.find);
+route.put("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.update);
+route.delete("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.delete);
+
+//Supervisor Profile Registration APIs
+route.post("/api/supervisorProf-details/", contoller.SupervisorProfileDetschema.create);
+route.get("/api/supervisorProf-details/", contoller.SupervisorProfileDetschema.find);
+route.put("/api/supervisorProf-details/", contoller.SupervisorProfileDetschema.update);
+route.delete("/api/supervisorProf-details/", contoller.SupervisorProfileDetschema.delete);
+
+//Student Profile Registration APIs
+route.post("/api/studentrof-details/", contoller.StuProfileDetailschema.create);
+route.get("/api/studentrof-details/", contoller.StuProfileDetailschema.find);
+route.put("/api/studentrof-details/", contoller.StuProfileDetailschema.update);
+route.delete("/api/studentrof-details/", contoller.StuProfileDetailschema.delete);
+
+
 
 module.exports = route;

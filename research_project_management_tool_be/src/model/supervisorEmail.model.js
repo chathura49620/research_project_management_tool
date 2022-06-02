@@ -10,7 +10,7 @@ var supervisorDetailsschema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  messageE: {
+  message: {
     type: String,
     required: true,
   },

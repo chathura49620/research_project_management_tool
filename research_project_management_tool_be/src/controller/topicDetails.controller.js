@@ -62,3 +62,28 @@ exports.find = (req, res) => {
         });
     }
   };
+
+  //update a previous Production ROund
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res
+      .status(400)
+      .send({ message: "Data To Be Update Can Not Be Empty" });
+  }
+
+  const id = req.body.id;
+  studentTopicRegistrationDetails
+    .findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res
+          .status(400)
+          .send({ message: "Previous Production Round Details Is Not Found" });
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error while Updateting Details" });
+    });
+};
