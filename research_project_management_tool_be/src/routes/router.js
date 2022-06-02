@@ -38,4 +38,9 @@ route.get("/api/stuTopicRegDet-details/", contoller.studentTopicRegistrationDeta
 route.post("/api/supervisorEmail-details/", contoller.superviserEmailDet.create);
 route.get("/api/supervisorEmail-details/", contoller.superviserEmailDet.find);
 
+//Profile Registration APIs
+route.post("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.create);
+route.get("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.find);
+route.put("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.update);
+route.delete("/api/evalPanelMember-details/", contoller.EvaluvationPanelMemberProfileDetailschema.delete);
 module.exports = route;

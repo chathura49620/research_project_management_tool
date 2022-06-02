@@ -10,3 +10,5 @@ exports.stuGroupDetails = require("./studentGroupDetails.controller");
 exports.studentTopicRegistrationDetails = require("./topicDetails.controller");
 exports.superviserEmailDet = require("./supervisorEmailDetails.contoller");
 
+//profile management controller
+exports.EvaluvationPanelMemberProfileDetailschema = require("./evaluvationPanelMemberProfile.contoller");
