@@ -38,6 +38,7 @@ class SupervisorEmail extends Component {
         body: JSON.stringify({
             senderEmail: event.target.senderEmail.value,
             subject: event.target.subject.value,
+            from: event.target.from.value,
             message: event.target.message.value,
         
      
@@ -122,6 +123,20 @@ class SupervisorEmail extends Component {
                   />
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.topicNameError}
+                  </div>
+                </Form.Group>
+                <Form.Group controlId="from">
+                  <Form.Label style={{ fontWeight: "bold" }}>
+                  From
+                  </Form.Label>
+                  <Form.Control
+                    style={{ border: "1px solid #050139" }}
+                    type="text"
+                    name="from"
+                    placeholder=" From"
+                  />
+                  <div style={{ background: "#f8d7da" }}>
+                    {this.state.abstractError}
                   </div>
                 </Form.Group>
                 <Form.Group controlId="subject">
