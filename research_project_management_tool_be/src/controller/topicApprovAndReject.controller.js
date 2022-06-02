@@ -1,15 +1,9 @@
 
-var studentTopicDetails = require("../model/topics.model");
+var studentTopicDetails = require("../model/topicDetails.model");
 var nodemailer = require('nodemailer');
 
 
-// var transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//       user: 'chathuraprabath9949620@gmail.com',
-//       pass: 'Cha0703091504*'
-//     }
-// });
+
 var transport = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
   port: 2525,

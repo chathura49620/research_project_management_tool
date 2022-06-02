@@ -22,47 +22,50 @@ class AddTopicDetailsForm1 extends Component {
  
 
   handleSubmit(event, props) {
-    console.log(event.target.topicName.value);
-    console.log(event);
-    const isValid = this.validate(event);
+    // console.log(event.target.topicName.value);
+    // console.log(event);
+    // const isValid = this.validate(event);
+    var topicName = event.target.topicName.value;
+    var abstract  = event.target.abstract.value;
+    var topicDescription = event.target.topicDescription.value;
     event.preventDefault();
-
-    if (isValid) {
-      fetch("http://localhost:5000/api/topic-details", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          username: "thirnaya",
-        },
-        body: JSON.stringify({
-            topicName: event.target.topicName.value,
-            abstract: event.target.abstract.value,
-            topicDescription: event.target.topicDescription.value,
+    window.location.href = 'http://localhost:3000/stuGroup-registration-2?topicName=' + topicName +'&abstract=' + abstract + '&topicDescription=' + topicDescription;
+    // if (isValid) {
+    //   fetch("http://localhost:5000/api/topic-details", {
+    //     method: "POST",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //       username: "thirnaya",
+    //     },
+    //     body: JSON.stringify({
+    //         topicName: event.target.topicName.value,
+    //         abstract: event.target.abstract.value,
+    //         topicDescription: event.target.topicDescription.value,
         
      
-        }),
-      })
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            swal({
-              title: "Topic Details Added Succesfully",
-              icon: "success",
-              button: "Done",
-            });
-            setTimeout(
-              function () {
-                window.location.reload();
-              }.bind(this),
-              1500
-            );
-          },
-          (error) => {
-            this.setState({ snackbaropen: true, snackbarmsg: "Failed" });
-          }
-        );
-    }
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then(
+    //       (result) => {
+    //         swal({
+    //           title: "Topic Details Added Succesfully",
+    //           icon: "success",
+    //           button: "Done",
+    //         });
+    //         setTimeout(
+    //           function () {
+    //             window.location.reload();
+    //           }.bind(this),
+    //           1500
+    //         );
+    //       },
+    //       (error) => {
+    //         this.setState({ snackbaropen: true, snackbarmsg: "Failed" });
+    //       }
+    //     );
+    // }
   }
 
   validate(event) {

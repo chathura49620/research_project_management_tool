@@ -76,7 +76,9 @@ export class TopicEvalTable extends Component {
           <th scope="col">groupID</th>
           <th scope="col">topicName</th>
           <th scope="col">topicDescription</th>
-          <th scope="col">groupName</th>
+          <th scope="col">researchProblem</th>
+          <th scope="col">researchSolution</th>
+          <th scope="col">technology</th>
           <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
@@ -90,7 +92,9 @@ export class TopicEvalTable extends Component {
             <td>{i.groupID}</td>
             <td>{i.topicName}</td>
             <td>{i.topicDescription}</td>
-            <td>{i.groupName}</td>
+            <td>{i.researchProblem}</td>
+            <td>{i.researchSolution}</td>
+            <td>{i.technology}</td>
             <td>{i.status}</td>
             <td>
               {i.status === 'Pending' ? <div><button 

@@ -13,14 +13,12 @@ import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
-<<<<<<< HEAD
 import TopicEval from "./pages/EvaPanel/TopicEval";
 
-=======
 //Student
->>>>>>> feature/student_management
 import StudentDashboard from './pages/Student/StudentDashboard';
 import AddTopicDetailsForm1 from './pages/Student/AddTopicDetailsForm1';
+import AddTopicDetailsForm2 from './pages/Student/AddTopicDetailsForm2';
 import AddFirstStudentDetails from './pages/Student/AddFirstStudentDetails';
 import StudentSideNav from "./components/Student/sideNav/Sidebar"; 
 
@@ -60,6 +58,7 @@ class Dashboard extends Component {
             <Route path="/" exact component={StudentDashboard}></Route>
             <Route path="/topic-registration" exact component={AddTopicDetailsForm1}></Route>
             <Route path="/stuGroup-registration" exact component={AddFirstStudentDetails}></Route>
+            <Route path="/stuGroup-registration-2" exact component={AddTopicDetailsForm2}></Route>
           </div>
         );
       }
