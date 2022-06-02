@@ -23,6 +23,7 @@ import AddFirstStudentDetails from './pages/Student/AddFirstStudentDetails';
 import AddSecondStudentDetails from './pages/Student/AddSecondStudentDetails';
 import AddThirdStudentDetails from './pages/Student/AddThirdStudentDetails';
 import AddFourthStudentDetails from './pages/Student/AddFourthStudentDetails';
+import SupervisorEmail from './pages/Student/SupervisorEmail';
 import StudentSideNav from "./components/Student/sideNav/Sidebar"; 
 
 class Dashboard extends Component {
@@ -65,6 +66,7 @@ class Dashboard extends Component {
             <Route path="/stuGroup-registration-3" exact component={AddThirdStudentDetails}></Route>
             <Route path="/stuGroup-registration-4" exact component={AddFourthStudentDetails}></Route>
             <Route path="/topic-registration-2" exact component={AddTopicDetailsForm2}></Route>
+            <Route path="/email-sending" exact component={SupervisorEmail}></Route>
           </div>
         );
       }

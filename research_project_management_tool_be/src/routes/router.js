@@ -36,7 +36,6 @@ route.get("/api/stuTopicRegDet-details/", contoller.studentTopicRegistrationDeta
 
 //Superviser/Cosuperviser Email APIs
 route.post("/api/supervisorEmail-details/", contoller.superviserEmailDet.create);
-route.get("/api/supervisorEmail-details/", contoller.superviserEmailDet.find);
 
 //Supervisor Topic APIs
 route.put("/api/topic-details-update/", contoller.topicApproveAndReject.update);
