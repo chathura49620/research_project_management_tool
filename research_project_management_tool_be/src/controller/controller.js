@@ -12,3 +12,5 @@ exports.superviserEmailDet = require("./supervisorEmailDetails.contoller");
 
 //profile management controller
 exports.EvaluvationPanelMemberProfileDetailschema = require("./evaluvationPanelMemberProfile.contoller");
+exports.SupervisorProfileDetschema = require("./supervisorProfileDetails.controller");
+exports.StuProfileDetailschema = require("./studentProfileDetails.controller");
