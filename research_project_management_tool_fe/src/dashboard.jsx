@@ -13,6 +13,7 @@ import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
+import TopicEval from "./pages/EvaPanel/TopicEval";
 
 import StudentDashboard from './pages/Student/StudentDashboard';
 
@@ -39,6 +40,8 @@ class Dashboard extends Component {
           <div>
             <EvaPanelSideNav />
             <Route path="/" exact component={StudentDashboard}></Route>
+            <Route path="/topic-evaluation" exact component={TopicEval}></Route>
+            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
             
           </div>
         );
@@ -58,6 +61,7 @@ class Dashboard extends Component {
             <EvaPanelSideNav />
             <Route path="/" exact component={AdminDashboard}></Route>
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+            
           </div>
         );
       }

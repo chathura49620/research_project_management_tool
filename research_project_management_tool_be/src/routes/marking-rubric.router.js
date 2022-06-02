@@ -10,15 +10,16 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, DIR);
     },
-    filename: (req, file, cb) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+    filename: (req, files, cb) => {
+       
+        const fileName = req.files.rublicPdfFile.name.toLowerCase().split(' ').join('-');
         cb(null, '361d55ff-3b19-4ed8-8170-8317daceb037' + '-' + fileName)
     }
 });
 var upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
-        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg" || file.mimetype == "application/pdf") {
             cb(null, true);
         } else {
             cb(null, false);
@@ -30,13 +31,13 @@ var upload = multer({
 // let User = require('../models/User');
 let MarkingRubricDetails = require("../model/marking-rubrics.model");
 router.post('/marking-rubrics', upload.single('rublicPdfFile'), (req, res, next) => {
-    console.log(req.year) ;
+    // console.log(req) ;
     const url = req.protocol + '://' + req.get('host')
     const markingRubricDetails = new MarkingRubricDetails({
         _id: new mongoose.Types.ObjectId(),
         year: 1998,
         rublicName: "test",
-        rublicPdfFile: url + '/public/' + req.file.filename
+        rublicPdfFile: '/public/' + req.files.rublicPdfFile.name
     });
     markingRubricDetails.save().then(result => {
         res.status(201).json({

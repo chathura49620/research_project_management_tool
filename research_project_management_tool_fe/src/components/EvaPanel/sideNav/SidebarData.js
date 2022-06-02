@@ -13,6 +13,20 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
+    title: "Topic Evaluation",
+    path: "/topic-evaluation",
+    icon: <IoIcons.IoMdPlay />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: "Presentation Evaluation",
+    path: "/marking-rubrics",
+    icon: <IoIcons.IoMdPlay />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
     title: "Marking Rubrics",
     path: "/marking-rubrics",
     icon: <IoIcons.IoMdPlay />,
