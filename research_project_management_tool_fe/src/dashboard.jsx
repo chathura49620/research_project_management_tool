@@ -42,6 +42,14 @@ class Dashboard extends Component {
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
           </div>
         );
+      } else if (localStorage.getItem("type") === "Superviosor") {
+        return (
+          <div>
+            <EvaPanelSideNav />
+            <Route path="/" exact component={EvaPanelDashboard}></Route>
+            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+          </div>
+        );
       } else {
       }
     } else {

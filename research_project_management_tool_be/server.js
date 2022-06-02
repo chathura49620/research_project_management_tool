@@ -2,7 +2,7 @@ const express = require("express");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const connectDB = require("./src/database/connection");
-const marking_rubrics = require('./src/routes/marking-rubric.router')
+const marking_rubrics = require("./src/routes/marking-rubric.router");
 
 //get env file configarations
 require("dotenv").config();
