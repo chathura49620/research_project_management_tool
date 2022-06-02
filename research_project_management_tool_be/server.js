@@ -22,7 +22,6 @@ const userRouter = require("./src/routes/users");
 //load routers
 app.use("/users", userRouter);
 app.use("/api", marking_rubrics);
-//app.use("/users", userRouter);
 app.use("/", require("./src/routes/router"));
 
 app.listen(port, () => {
