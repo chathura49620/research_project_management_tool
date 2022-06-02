@@ -25,7 +25,7 @@ route.get("/api/marking-rubrics", contoller.markingrubricsDetails.find);
 route.post("/api/topic-details/", contoller.topicDetails.create);
 route.get("/api/topic-details/", contoller.topicDetails.find);
 route.put("/api/topic-details/", contoller.topicDetails.update);
-route.delete("/api/topic-details/", contoller.topicDetails.delete);
+//route.delete("/api/topic-details/", contoller.topicDetails.delete);
 
 
 //Student Group Registration APIs

@@ -29,6 +29,18 @@ var TopicDetailsschema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  status: {
+    type: String,
+    required: false,
+  },
+  groupLeaderEmail: {
+    type: String,
+    required: false,
+  },
+  note: {
+    type: String,
+    required: false,
+  },
 });
 
 const studentTopicRegistrationDetails = mongoose.model("topicRegistrationDetails", TopicDetailsschema);

@@ -1,6 +1,6 @@
 exports.users = require("./user.controller");
 
-exports.topicDetails = require("./topics.controller");
+exports.topicDetails = require("./topicDetails.controller");
 exports.markingrubricsDetails = require("./marking-rubrics.controller");
 exports.groups = require("./group.controller");
 exports.documents = require("./document.controller");
