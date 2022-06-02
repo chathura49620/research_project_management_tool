@@ -9,6 +9,7 @@ exports.create = (req, res) => {
   
     const superviserEmailDet = new supervisorEmailDetails({
         senderEmail: req.body.senderEmail,
+        from: req.body.from,
         subject: req.body.subject,
         messageE: req.body.messageE,
      
