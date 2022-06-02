@@ -3,23 +3,23 @@ const mongoose = require("mongoose");
 var GroupDetailschema = new mongoose.Schema({
   studentID: {
     type: String,
-    required: true,
+    required: false,
   },
   studentName: {
     type: String,
-    required: true,
+    required: false,
   },
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   phone: {
     type: String,
-    required: true,
+    required: false,
   },
   specilization: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

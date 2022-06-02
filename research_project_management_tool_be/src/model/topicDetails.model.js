@@ -3,31 +3,31 @@ const mongoose = require("mongoose");
 var TopicDetailsschema = new mongoose.Schema({
     topicName: {
     type: String,
-    required: true,
+    required: false,
   },
   abstract: {
     type: String,
-    required: true,
+    required: false,
   },
   topicDescription: {
     type: String,
-    required: true,
+    required: false,
   },
   groupID: {
     type: String,
-    required: true,
+    required: false,
   },
   researchProblem: {
     type: String,
-    required: true,
+    required: false,
   },
   researchSolution: {
     type: String,
-    required: true,
+    required: false,
   },
   technology: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
