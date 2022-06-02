@@ -33,9 +33,21 @@ const AddDocuments = () => {
         },
         // Clear percentage
       });
-      const { fileName, filePath } = res.data;
+      // const { fileName, filePath } = res.data;
 
-      setUploadedFile({ fileName, filePath });
+      const jsonOb = {
+        documentName: filename,
+      };
+
+      const response = await fetch("http://localhost:5000/addDocuments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(jsonOb),
+      });
+
+      const data = await response.json();
+
+      // setUploadedFile({ fileName, filePath });
     } catch (error) {
       if (error.response.status === 500) {
         console.log("There was a problem with  the server");

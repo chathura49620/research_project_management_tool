@@ -13,5 +13,7 @@ route.post("/api/groups", contoller.groups.create);
 route.get("/api/groups", contoller.groups.getAllGroups);
 
 route.post("/upload", contoller.documents.create);
+route.post("/addDocuments", contoller.documents.AddDocuments);
+route.get("/api/documents", contoller.documents.getAllDocuments);
 
 module.exports = route;

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { getAllFiles, getAllFilesSync } from "get-all-files";
+import TableDocument from "../../components/admin/tables/tableDocument";
 
 class ViewUploadedDocuments extends Component {
   state = {
-    groups: [],
+    documents: [],
     editOb: {},
     show: false,
   };
@@ -38,15 +38,26 @@ class ViewUploadedDocuments extends Component {
   };
 
   async componentDidMount() {
-    console.log(
-      await getAllFiles(
-        `${__dirname}/../../../research_project_management_tool_fe/public/uploads/${file.name}`
-      ).toArray()
-    );
+    const response = await fetch("http://localhost:5000/api/documents", {
+      method: "GET",
+    });
+
+    const data = await response.json();
+
+    this.setState({ documents: data });
+
+    console.log(data);
   }
 
   render() {
-    return <>uploaded Documents</>;
+    return (
+      <>
+        <TableDocument
+          filteredItems={this.state.documents}
+          onRemove={this.handleRemove}
+        />
+      </>
+    );
   }
 }
 
