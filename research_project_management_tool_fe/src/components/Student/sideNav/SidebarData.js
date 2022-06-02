@@ -13,16 +13,16 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
-    title: "Marking Rubrics",
-    path: "/marking-rubrics",
+    title: "Topic Reditration",
+    path: "/topic-registration",
     icon: <IoIcons.IoMdPlay />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   
   {
-    title: "My Profile",
-    path: "/myprofile",
+    title: "Group Registration ",
+    path: "/stuGroup-registration",
     icon: <IoIcons.IoMdPerson />,
   },
 ];

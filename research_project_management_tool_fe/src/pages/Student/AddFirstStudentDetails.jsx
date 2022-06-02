@@ -109,9 +109,9 @@ class AddFirstStudentDetails extends Component {
       <React.Fragment>
         <h1 className="heading">Add First Student Details</h1>
 
-        <div className="center">
+        {/* <div className="center">
           <img src={addorder} alt="leavepic" />
-        </div>
+        </div> */}
 
         <div className="row">
           <div className="col-3"></div>

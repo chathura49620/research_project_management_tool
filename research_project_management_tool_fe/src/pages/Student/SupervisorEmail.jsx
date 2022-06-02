@@ -5,7 +5,7 @@ import axios from "axios";
 import "./styles.css";
 
 
-class AddTopicDetailsForm1 extends Component {
+class SupervisorEmail extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,9 +36,9 @@ class AddTopicDetailsForm1 extends Component {
           username: "thirnaya",
         },
         body: JSON.stringify({
-            topicName: event.target.topicName.value,
-            abstract: event.target.abstract.value,
-            topicDescription: event.target.topicDescription.value,
+            senderEmail: event.target.senderEmail.value,
+            subject: event.target.subject.value,
+            message: event.target.message.value,
         
      
         }),
@@ -47,7 +47,7 @@ class AddTopicDetailsForm1 extends Component {
         .then(
           (result) => {
             swal({
-              title: "Topic Details Added Succesfully",
+              title: "Email Sent Succesfully",
               icon: "success",
               button: "Done",
             });
@@ -71,13 +71,13 @@ class AddTopicDetailsForm1 extends Component {
     let topicDescriptionError = "";
   
 
-    if (!event.target.topicName.value) {
+    if (!event.target.senderEmail.value) {
         topicNameError = "Topic Field Can Not Be Blank";
     }
-    if (!event.target.abstract.value) {
+    if (!event.target.subject.value) {
         abstractError = "Abstract Field Can Not Be Blank";
     }
-    if (!event.target.topicDescription.value) {
+    if (!event.target.message.value) {
         topicDescriptionError = "Email Field Can Not Be Blank";
     }
    
@@ -100,9 +100,9 @@ class AddTopicDetailsForm1 extends Component {
       <React.Fragment>
         <h1 className="heading">Add First Student Details</h1>
 
-        {/* <div className="center">
+        <div className="center">
           <img src={addorder} alt="leavepic" />
-        </div> */}
+        </div>
 
         <div className="row">
           <div className="col-3"></div>
@@ -110,44 +110,44 @@ class AddTopicDetailsForm1 extends Component {
           <div className="col">
             <Form onSubmit={this.handleSubmit}>
               <Form.Group>
-                <Form.Group controlId="topicName">
+                <Form.Group controlId="senderEmail">
                   <Form.Label style={{ fontWeight: "bold" }}>
-                    Topic
+                    Sender
                   </Form.Label>
                   <Form.Control
                     style={{ border: "1px solid #050139" }}
                     type="text"
-                    name="topicName"
-                    placeholder=" Topic Name"
+                    name="senderEmail"
+                    placeholder=" Sender"
                   />
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.topicNameError}
                   </div>
                 </Form.Group>
-                <Form.Group controlId="abstract">
+                <Form.Group controlId="subject">
                   <Form.Label style={{ fontWeight: "bold" }}>
-                  Abstract
+                  Subject
                   </Form.Label>
                   <Form.Control
                     style={{ border: "1px solid #050139" }}
                     type="text"
-                    name="abstract"
-                    placeholder=" Abstract"
+                    name="subject"
+                    placeholder=" Subject"
                   />
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.abstractError}
                   </div>
                 </Form.Group>
               </Form.Group>
-              <Form.Group controlId="topicDescription">
+              <Form.Group controlId="message">
                 <Form.Label style={{ fontWeight: "bold" }}>
-                  Topic Description
+                Message
                 </Form.Label>
                 <Form.Control
                   style={{ border: "1px solid #050139" }}
                   type="text"
-                  name="topicDescription"
-                  placeholder=" Topic Description"
+                  name="message"
+                  placeholder=" Message"
                 />
                 <div style={{ background: "#f8d7da" }}>
                   {this.state.topicDescriptionError}
@@ -160,7 +160,7 @@ class AddTopicDetailsForm1 extends Component {
                   style={{ backgroundColor: "#7121AD", color: "white" }}
                   type="submit"
                 >
-                  Next
+                  Submit
                 </Button>
               </Form.Group>
             </Form>
@@ -173,4 +173,4 @@ class AddTopicDetailsForm1 extends Component {
   }
 }
 
-export default AddTopicDetailsForm1;
+export default SupervisorEmail;

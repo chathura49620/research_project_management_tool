@@ -13,8 +13,11 @@ import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
-
+//Student
 import StudentDashboard from './pages/Student/StudentDashboard';
+import AddTopicDetailsForm1 from './pages/Student/AddTopicDetailsForm1';
+import AddFirstStudentDetails from './pages/Student/AddFirstStudentDetails';
+import StudentSideNav from "./components/Student/sideNav/Sidebar"; 
 
 class Dashboard extends Component {
   state = {};
@@ -46,18 +49,17 @@ class Dashboard extends Component {
       else if (localStorage.getItem("type") === "Student") {
         return (
           <div>
-            <EvaPanelSideNav />
-            <Route path="/" exact component={AdminDashboard}></Route>
-            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+            <StudentSideNav />
+            <Route path="/" exact component={StudentDashboard}></Route>
+            <Route path="/topic-registration" exact component={AddTopicDetailsForm1}></Route>
+            <Route path="/stuGroup-registration" exact component={AddFirstStudentDetails}></Route>
           </div>
         );
       }
       else if (localStorage.getItem("type") === "Superviosor") {
         return (
           <div>
-            <EvaPanelSideNav />
-            <Route path="/" exact component={AdminDashboard}></Route>
-            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+         
           </div>
         );
       }
