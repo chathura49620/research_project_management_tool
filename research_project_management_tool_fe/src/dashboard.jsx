@@ -46,7 +46,7 @@ class Dashboard extends Component {
       else if (localStorage.getItem("type") === "Student") {
         return (
           <div>
-         
+            <EvaPanelSideNav />
             <Route path="/" exact component={AdminDashboard}></Route>
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
           </div>
@@ -55,7 +55,9 @@ class Dashboard extends Component {
       else if (localStorage.getItem("type") === "Superviosor") {
         return (
           <div>
-           
+            <EvaPanelSideNav />
+            <Route path="/" exact component={AdminDashboard}></Route>
+            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
           </div>
         );
       }

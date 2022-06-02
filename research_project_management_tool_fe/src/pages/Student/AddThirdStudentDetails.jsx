@@ -195,6 +195,13 @@ class AddThirdStudentDetails extends Component {
                 >
                   Next
                 </Button>
+                <Button
+                  className="my-1"
+                  style={{ backgroundColor: "#7121AD", color: "white" }}
+                  type="submit"
+                >
+                  Previous
+                </Button>
               </Form.Group>
             </Form>
           </div>
