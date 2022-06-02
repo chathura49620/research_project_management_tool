@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
 import "./styles.css";
-import addorder from "../../pages/assets/addorderpic.png";
+// import addorder from "../../pages/assets/addorderpic.png";
 
 class AddSecondStudentDetails extends Component {
   constructor(props) {
@@ -48,17 +48,7 @@ class AddSecondStudentDetails extends Component {
         .then((res) => res.json())
         .then(
           (result) => {
-            swal({
-              title: "Student Details Added Succesfully",
-              icon: "success",
-              button: "Done",
-            });
-            setTimeout(
-              function () {
-                window.location.reload();
-              }.bind(this),
-              1500
-            );
+            window.location.href = 'http://localhost:3000/stuGroup-registration-3';
           },
           (error) => {
             this.setState({ snackbaropen: true, snackbarmsg: "Failed" });
@@ -110,7 +100,7 @@ class AddSecondStudentDetails extends Component {
         <h1 className="heading">Add First Student Details</h1>
 
         <div className="center">
-          <img src={addorder} alt="leavepic" />
+          {/* <img src={addorder} alt="leavepic" /> */}
         </div>
 
         <div className="row">
@@ -195,13 +185,13 @@ class AddSecondStudentDetails extends Component {
                 >
                   Next
                 </Button>
-                <Button
+                {/* <Button
                   className="my-1"
                   style={{ backgroundColor: "#7121AD", color: "white" }}
                   type="submit"
                 >
                   Previous
-                </Button>
+                </Button> */}
               </Form.Group>
             </Form>
           </div>

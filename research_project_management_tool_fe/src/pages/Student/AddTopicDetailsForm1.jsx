@@ -29,7 +29,7 @@ class AddTopicDetailsForm1 extends Component {
     var abstract  = event.target.abstract.value;
     var topicDescription = event.target.topicDescription.value;
     event.preventDefault();
-    window.location.href = 'http://localhost:3000/stuGroup-registration-2?topicName=' + topicName +'&abstract=' + abstract + '&topicDescription=' + topicDescription;
+    window.location.href = 'http://localhost:3000/topic-registration-2?topicName=' + topicName +'&abstract=' + abstract + '&topicDescription=' + topicDescription;
     // if (isValid) {
     //   fetch("http://localhost:5000/api/topic-details", {
     //     method: "POST",
