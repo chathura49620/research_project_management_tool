@@ -13,8 +13,8 @@ function Projects({reservedRooms}) {
           {/* <img src={AvatarImage} alt="" /> */}
         </Avatar>
         <Detail>
-        <Title><div style={{fontSize: 18}}>{`ROOM NO: ${r.roomNo}`}</div></Title>
-       <SubTitle><div style={{fontSize: 17}}>{`START: ${r.startDate} END: ${r.endDate}`}</div></SubTitle>
+        <Title><div style={{fontSize: 18}}>Hello</div></Title>
+       <SubTitle><div style={{fontSize: 17}}>{`Message type: ${r.startDate} END: ${r.endDate}`}</div></SubTitle>
        </Detail>
       </Project>
 
