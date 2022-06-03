@@ -8,6 +8,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import ViewResearchGroup from "./pages/Admin/ViewResearchGroups";
 import AddDocuments from "./components/admin/forms/addDocuments";
 import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
+import RegisterStudent from "./components/admin/forms/registerStudent";
 
 class Dashboard extends Component {
   state = {};
@@ -25,6 +26,7 @@ class Dashboard extends Component {
             <Route path="/groups" component={ViewResearchGroup} />
             <Route path="/documents" component={AddDocuments} />
             <Route path="/uploaded" component={ViewUploadedDocuments} />
+            <Route path="/Addstudent" component={RegisterStudent} />
           </div>
         );
       } else if (localStorage.getItem("type") === "Panel Member") {
