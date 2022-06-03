@@ -48,17 +48,7 @@ class AddFirstStudentDetails extends Component {
         .then((res) => res.json())
         .then(
           (result) => {
-            swal({
-              title: "Student Details Added Succesfully",
-              icon: "success",
-              button: "Done",
-            });
-            setTimeout(
-              function () {
-                window.location.reload();
-              }.bind(this),
-              1500
-            );
+            window.location.href = 'http://localhost:3000/stuGroup-registration-2';
           },
           (error) => {
             this.setState({ snackbaropen: true, snackbarmsg: "Failed" });

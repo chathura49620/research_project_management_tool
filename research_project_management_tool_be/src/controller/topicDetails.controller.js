@@ -15,6 +15,8 @@ exports.create = (req, res) => {
     researchProblem: req.body.researchProblem,
     researchSolution: req.body.researchSolution,
     technology: req.body.technology,
+    groupLeaderEmail: req.body.groupLeaderEmail,
+    status: req.body.status,
   });
 
   stutopicDetails

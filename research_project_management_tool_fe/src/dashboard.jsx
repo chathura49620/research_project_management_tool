@@ -13,10 +13,17 @@ import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
+import TopicEval from "./pages/EvaPanel/TopicEval";
+
 //Student
 import StudentDashboard from './pages/Student/StudentDashboard';
 import AddTopicDetailsForm1 from './pages/Student/AddTopicDetailsForm1';
+import AddTopicDetailsForm2 from './pages/Student/AddTopicDetailsForm2';
 import AddFirstStudentDetails from './pages/Student/AddFirstStudentDetails';
+import AddSecondStudentDetails from './pages/Student/AddSecondStudentDetails';
+import AddThirdStudentDetails from './pages/Student/AddThirdStudentDetails';
+import AddFourthStudentDetails from './pages/Student/AddFourthStudentDetails';
+import SupervisorEmail from './pages/Student/SupervisorEmail';
 import StudentSideNav from "./components/Student/sideNav/Sidebar"; 
 
 class Dashboard extends Component {
@@ -42,6 +49,8 @@ class Dashboard extends Component {
           <div>
             <EvaPanelSideNav />
             <Route path="/" exact component={StudentDashboard}></Route>
+            <Route path="/topic-evaluation" exact component={TopicEval}></Route>
+            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
             
           </div>
         );
@@ -53,6 +62,11 @@ class Dashboard extends Component {
             <Route path="/" exact component={StudentDashboard}></Route>
             <Route path="/topic-registration" exact component={AddTopicDetailsForm1}></Route>
             <Route path="/stuGroup-registration" exact component={AddFirstStudentDetails}></Route>
+            <Route path="/stuGroup-registration-2" exact component={AddSecondStudentDetails}></Route>
+            <Route path="/stuGroup-registration-3" exact component={AddThirdStudentDetails}></Route>
+            <Route path="/stuGroup-registration-4" exact component={AddFourthStudentDetails}></Route>
+            <Route path="/topic-registration-2" exact component={AddTopicDetailsForm2}></Route>
+            <Route path="/email-sending" exact component={SupervisorEmail}></Route>
           </div>
         );
       }

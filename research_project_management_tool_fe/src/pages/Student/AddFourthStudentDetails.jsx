@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
 import "./styles.css";
-import addorder from "../../pages/assets/addorderpic.png";
+// import addorder from "../../pages/assets/addorderpic.png";
 
 class AddFourthStudentDetails extends Component {
   constructor(props) {
@@ -23,10 +23,10 @@ class AddFourthStudentDetails extends Component {
  
 
   handleSubmit(event, props) {
-    console.log(event.target.studentID.value);
-    console.log(event);
+    // console.log(event.target.studentID.value);
+    // console.log(event);
     const isValid = this.validate(event);
-    event.preventDefault();
+    // event.preventDefault();
 
     if (isValid) {
       fetch("http://localhost:5000/api/stuGroupDet-details", {
@@ -45,9 +45,10 @@ class AddFourthStudentDetails extends Component {
      
         }),
       })
-        .then((res) => res.json())
+        // .then((res) => res.json())
         .then(
           (result) => {
+            alert("test");
             swal({
               title: "Student Details Added Succesfully",
               icon: "success",
@@ -55,7 +56,7 @@ class AddFourthStudentDetails extends Component {
             });
             setTimeout(
               function () {
-                window.location.reload();
+                // window.location.href = 'http://localhost:3000/';
               }.bind(this),
               1500
             );
@@ -110,7 +111,7 @@ class AddFourthStudentDetails extends Component {
         <h1 className="heading">Add Fourth Student Details</h1>
 
         <div className="center">
-          <img src={addorder} alt="leavepic" />
+          {/* <img src={addorder} alt="leavepic" /> */}
         </div>
 
         <div className="row">
@@ -195,13 +196,13 @@ class AddFourthStudentDetails extends Component {
                 >
                   Next
                 </Button>
-                <Button
+                {/* <Button
                   className="my-1"
                   style={{ backgroundColor: "#7121AD", color: "white" }}
                   type="submit"
                 >
                   Previous
-                </Button>
+                </Button> */}
               </Form.Group>
             </Form>
           </div>

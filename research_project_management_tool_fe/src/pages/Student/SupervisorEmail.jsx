@@ -23,12 +23,13 @@ class SupervisorEmail extends Component {
 
   handleSubmit(event, props) {
     //console.log(event.target.topicName.value);
+    // console.log(event.target.topicName.value);
     console.log(event);
     const isValid = this.validate(event);
     event.preventDefault();
 
-    if (isValid) {
-      fetch("http://localhost:5000/api/topic-details", {
+    // if (isValid) {
+      fetch("http://localhost:5000/api/supervisorEmail-details/", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -63,7 +64,7 @@ class SupervisorEmail extends Component {
             this.setState({ snackbaropen: true, snackbarmsg: "Failed" });
           }
         );
-    }
+    // }
   }
 
   validate(event) {
@@ -102,7 +103,7 @@ class SupervisorEmail extends Component {
         <h1 className="heading">Add First Student Details</h1>
 
         <div className="center">
-          <img src={addorder} alt="leavepic" />
+          {/* <img src={addorder} alt="leavepic" /> */}
         </div>
 
         <div className="row">

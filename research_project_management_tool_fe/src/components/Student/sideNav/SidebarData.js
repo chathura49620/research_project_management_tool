@@ -25,4 +25,9 @@ export const SidebarData = [
     path: "/stuGroup-registration",
     icon: <IoIcons.IoMdPerson />,
   },
+  {
+    title: "Email Sending",
+    path: "/email-sending",
+    icon: <IoIcons.IoMdPerson />,
+  },
 ];

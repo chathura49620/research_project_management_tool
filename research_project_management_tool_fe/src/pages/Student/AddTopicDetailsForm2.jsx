@@ -10,23 +10,27 @@ class AddTopicDetailsForm2 extends Component {
     super(props);
     this.state = {
       snackbaropen: false,
-      snackbarmsg: "",     
+      snackbarmsg: "",
       groupIDError: "",
       researchProblemError: "",
       researchSolutionError: "",
       technologyError: "",
-     
+
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
- 
+
 
   handleSubmit(event, props) {
     console.log(event.target.groupID.value);
     console.log(event);
     const isValid = this.validate(event);
     event.preventDefault();
+
+    const topicName= new URLSearchParams(this.props.location.search).get("topicName");
+    const abstract= new URLSearchParams(this.props.location.search).get("abstract");
+    const topicDescription= new URLSearchParams(this.props.location.search).get("topicDescription");
 
     if (isValid) {
       fetch("http://localhost:5000/api/topic-details", {
@@ -37,12 +41,16 @@ class AddTopicDetailsForm2 extends Component {
           username: "thirnaya",
         },
         body: JSON.stringify({
-            groupID: event.target.groupID.value,
-            researchProblem: event.target.researchProblem.value,
-            researchSolution: event.target.researchSolution.value,
-            technology: event.target.technology.value,
-        
-     
+          topicName: topicName,
+          abstract: abstract,
+          topicDescription: topicDescription,
+          groupID: event.target.groupID.value,
+          researchProblem: event.target.researchProblem.value,
+          researchSolution: event.target.researchSolution.value,
+          technology: event.target.technology.value,
+          groupLeaderEmail:event.target.groupLeaderEmail.value,
+          status:'Pending'
+
         }),
       })
         .then((res) => res.json())
@@ -55,7 +63,7 @@ class AddTopicDetailsForm2 extends Component {
             });
             setTimeout(
               function () {
-                window.location.reload();
+                // window.location.reload();
               }.bind(this),
               1500
             );
@@ -74,25 +82,25 @@ class AddTopicDetailsForm2 extends Component {
     let technologyError = "";
 
     if (!event.target.groupID.value) {
-        groupIDError = "Group ID Field Can Not Be Blank";
+      groupIDError = "Group ID Field Can Not Be Blank";
     }
     if (!event.target.researchProblem.value) {
-        researchProblemError = "Research Problem Field Can Not Be Blank";
+      researchProblemError = "Research Problem Field Can Not Be Blank";
     }
     if (!event.target.researchSolution.value) {
-        researchSolutionError = "Research Solution Field Can Not Be Blank";
+      researchSolutionError = "Research Solution Field Can Not Be Blank";
     }
     if (!event.target.technology.value) {
-        technologyError = "Technology Field Can Not Be Blank";
+      technologyError = "Technology Field Can Not Be Blank";
     }
 
-    if (groupIDError || researchProblemError || researchSolutionError || technologyError ) {
+    if (groupIDError || researchProblemError || researchSolutionError || technologyError) {
       this.setState({
         groupIDError: groupIDError,
         researchProblemError: researchProblemError,
         researchSolutionError: researchSolutionError,
         technologyError: technologyError,
-     
+
       });
       return false;
     }
@@ -117,7 +125,7 @@ class AddTopicDetailsForm2 extends Component {
               <Form.Group>
                 <Form.Group controlId="groupID">
                   <Form.Label style={{ fontWeight: "bold" }}>
-                  Group ID
+                    Group ID
                   </Form.Label>
                   <Form.Control
                     style={{ border: "1px solid #050139" }}
@@ -131,7 +139,7 @@ class AddTopicDetailsForm2 extends Component {
                 </Form.Group>
                 <Form.Group controlId="researchProblem">
                   <Form.Label style={{ fontWeight: "bold" }}>
-                  Research Problem
+                    Research Problem
                   </Form.Label>
                   <Form.Control
                     style={{ border: "1px solid #050139" }}
@@ -146,7 +154,7 @@ class AddTopicDetailsForm2 extends Component {
               </Form.Group>
               <Form.Group controlId="researchSolution">
                 <Form.Label style={{ fontWeight: "bold" }}>
-                Research Solution
+                  Research Solution
                 </Form.Label>
                 <Form.Control
                   style={{ border: "1px solid #050139" }}
@@ -157,10 +165,10 @@ class AddTopicDetailsForm2 extends Component {
                 <div style={{ background: "#f8d7da" }}>
                   {this.state.researchSolutionError}
                 </div>
-              </Form.Group>                         
+              </Form.Group>
               <Form.Group controlId="technology">
                 <Form.Label style={{ fontWeight: "bold" }}>
-                Technology
+                  Technology
                 </Form.Label>
                 <Form.Control
                   style={{ border: "1px solid #050139" }}
@@ -171,14 +179,28 @@ class AddTopicDetailsForm2 extends Component {
                 <div style={{ background: "#f8d7da" }}>
                   {this.state.technologyError}
                 </div>
-              </Form.Group> 
+              </Form.Group>
+              <Form.Group controlId="groupLeaderEmail">
+                <Form.Label style={{ fontWeight: "bold" }}>
+                  Group Leader Email
+                </Form.Label>
+                <Form.Control
+                  style={{ border: "1px solid #050139" }}
+                  type="text"
+                  name="groupLeaderEmail"
+                  placeholder="Group Leader Email"
+                />
+                <div style={{ background: "#f8d7da" }}>
+                  {this.state.technologyError}
+                </div>
+              </Form.Group>
               <Form.Group>
                 <Button
                   className="my-1"
                   style={{ backgroundColor: "#7121AD", color: "white" }}
                   type="submit"
                 >
-                  Next
+                  Submit
                 </Button>
               </Form.Group>
             </Form>

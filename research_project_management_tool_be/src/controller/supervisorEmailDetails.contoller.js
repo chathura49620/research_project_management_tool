@@ -1,62 +1,32 @@
-var supervisorEmailDetails = require("../model/supervisorEmail.model");
+
+var nodemailer = require('nodemailer');
+
+var transport = nodemailer.createTransport({
+  host: "smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "01cf1fde1cd007",
+    pass: "ce82ebc73019bf"
+  }
+});
+
 
 exports.create = (req, res) => {
-    // validate request
-    if (!req.body) {
-      res.status(400).send({ message: req.body });
-      return;
-    }
+    var mailOptions = {
+      from: req.body.from,
+      to: req.body.senderEmail,
+      subject:req.body.subject,
+      text: req.body.messageE
+    };
+
+    transport.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    }); 
+
+
+  }
   
-    const superviserEmailDet = new supervisorEmailDetails({
-        senderEmail: req.body.senderEmail,
-        from: req.body.from,
-        subject: req.body.subject,
-        messageE: req.body.messageE,
-     
-    });
-  
-    superviserEmailDet
-      .save(superviserEmailDet)
-      .then((data) => {
-        res.send(data);
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message: err.message || "Error: Could not send the email.",
-        });
-      });
-  };
-  
-  exports.find = (req, res) => {
-    if (req.query.id) {
-      const id = req.query.id;
-  
-      supervisorEmailDetails
-        .findById(id)
-        .then((data) => {
-          if (!data) {
-            res
-              .status(404)
-              .send({ message: "Could not find topic with ID" + id });
-          } else {
-            res.send(data);
-          }
-        })
-        .catch((err) => {
-          res.status(500).send({
-            message: "Error while retrieving Topic Details with ID" + id,
-          });
-        });
-    } else {
-        supervisorEmailDetails
-        .find()
-        .then((matCode) => {
-          res.send(matCode);
-        })
-        .catch((err) => {
-          res.status(500).send({
-            message: err.message || "Error: Cannot retrieve Topic Details",
-          });
-        });
-    }
-  };
