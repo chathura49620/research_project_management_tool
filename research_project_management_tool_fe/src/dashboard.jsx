@@ -9,12 +9,14 @@ import ViewResearchGroup from "./pages/Admin/ViewResearchGroups";
 import AddDocuments from "./components/admin/forms/addDocuments";
 import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 
-
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
-import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
+import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar";
+import SupervisorSideNav from "./components/Supervisor/sideNav/Sidebar";
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
-
-
+import ResearchTopics from "./pages/Supervisor/ResearchTopics";
+import Messages from "./pages/Supervisor/Messages";
+import StudentLists from "./pages/Supervisor/Messages";
+import SupervisorDashboard from "./pages/Supervisor/SupervisorDashboard";
 
 class Dashboard extends Component {
   state = {};
@@ -39,15 +41,25 @@ class Dashboard extends Component {
           <div>
             <EvaPanelSideNav />
             <Route path="/" exact component={EvaPanelDashboard}></Route>
-            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+            <Route
+              path="/marking-rubrics"
+              exact
+              component={MarkingRubricPage}
+            ></Route>
           </div>
         );
       } else if (localStorage.getItem("type") === "Superviosor") {
         return (
           <div>
-            <EvaPanelSideNav />
-            <Route path="/" exact component={EvaPanelDashboard}></Route>
-            <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
+            <SupervisorSideNav />
+            <Route path="/" exact component={SupervisorDashboard}></Route>
+            <Route
+              path="/research-topics"
+              exact
+              component={ResearchTopics}
+            ></Route>
+            <Route path="/messages" exact component={Messages}></Route>
+            <Route path="/student-lists" exact component={StudentLists}></Route>
           </div>
         );
       } else {
