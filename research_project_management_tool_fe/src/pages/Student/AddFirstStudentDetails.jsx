@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
 import "./styles.css";
-//import {save} from "../../pages/Student/assets/save.jpg";
+// import {save} from "../../pages/Student/assets/save.jpg";
 
 class AddFirstStudentDetails extends Component {
   constructor(props) {
@@ -100,7 +100,7 @@ class AddFirstStudentDetails extends Component {
         <h2 className="heading">Add First Student Details</h2>
         
        <div className="center">
-          <img src={save} alt="leavepic" />
+          {/* <img src={save} alt="leavepic" /> */}
         </div> 
 
         <div className="row">
