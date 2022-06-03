@@ -30,4 +30,9 @@ export const SidebarData = [
     path: "/email-sending",
     icon: <IoIcons.IoMdPerson />,
   },
+  {
+    title: "Profile",
+    path: "/student-profile-details",
+    icon: <IoIcons.IoMdPerson />,
+  },
 ];

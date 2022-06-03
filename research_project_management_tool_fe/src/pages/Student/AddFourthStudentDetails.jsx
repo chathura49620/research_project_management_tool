@@ -26,7 +26,7 @@ class AddFourthStudentDetails extends Component {
     // console.log(event.target.studentID.value);
     // console.log(event);
     const isValid = this.validate(event);
-    // event.preventDefault();
+    event.preventDefault();
 
     if (isValid) {
       fetch("http://localhost:5000/api/stuGroupDet-details", {
@@ -48,7 +48,7 @@ class AddFourthStudentDetails extends Component {
         // .then((res) => res.json())
         .then(
           (result) => {
-            alert("test");
+            // alert("test");
             swal({
               title: "Student Details Added Succesfully",
               icon: "success",
@@ -56,7 +56,7 @@ class AddFourthStudentDetails extends Component {
             });
             setTimeout(
               function () {
-                // window.location.href = 'http://localhost:3000/';
+                window.location.href = 'http://localhost:3000/';
               }.bind(this),
               1500
             );
