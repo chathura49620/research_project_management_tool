@@ -20,6 +20,12 @@ route.get("/api/documents", contoller.documents.getAllDocuments);
 route.delete("/api/documents/:id", contoller.documents.RemoveDocument);
 
 
+//Supervisor Message APIs
+route.post("/api/message-details/", contoller.messageDetails.create);
+route.get("/api/message-details/", contoller.messageDetails.find);
+route.put("/api/message-details/", contoller.messageDetails.update);
+route.delete("/api/message-details/", contoller.messageDetails.delete);
+
 //Marking Rublic Topic APIs
 route.get("/api/marking-rubrics", contoller.markingrubricsDetails.find);
 // route.put("/api/topic-details/", contoller.topicDetails.update);

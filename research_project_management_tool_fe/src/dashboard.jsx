@@ -9,9 +9,9 @@ import ViewResearchGroup from "./pages/Admin/ViewResearchGroups";
 import AddDocuments from "./components/admin/forms/addDocuments";
 import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
 
-
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
-import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar"; 
+import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar";
+import SupervisorSideNav from "./components/Supervisor/sideNav/Sidebar";
 import MarkingRubricPage from "./components/EvaPanel/marking-files-upload-component";
 import TopicEval from "./pages/EvaPanel/TopicEval";
 
@@ -26,6 +26,10 @@ import AddFourthStudentDetails from './pages/Student/AddFourthStudentDetails';
 import SupervisorEmail from './pages/Student/SupervisorEmail';
 import StudentSideNav from "./components/Student/sideNav/Sidebar"; 
 import StudentProfileDetails from "./pages/Student/StudentProfileDetails"
+import ResearchTopics from "./pages/Supervisor/ResearchTopics";
+import Messages from "./pages/Supervisor/Messages";
+import StudentLists from "./pages/Supervisor/Messages";
+import SupervisorDashboard from "./pages/Supervisor/SupervisorDashboard";
 
 class Dashboard extends Component {
   state = {};
@@ -49,6 +53,7 @@ class Dashboard extends Component {
         return (
           <div>
             <EvaPanelSideNav />
+<<<<<<< HEAD
             <Route path="/" exact component={StudentDashboard}></Route>
             <Route path="/topic-evaluation" exact component={TopicEval}></Route>
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
@@ -70,6 +75,28 @@ class Dashboard extends Component {
             <Route path="/topic-registration-2" exact component={AddTopicDetailsForm2}></Route>
             <Route path="/email-sending" exact component={SupervisorEmail}></Route>
             <Route path="/student-profile-details" exact component={StudentProfileDetails}></Route>
+=======
+            <Route path="/" exact component={EvaPanelDashboard}></Route>
+            <Route
+              path="/marking-rubrics"
+              exact
+              component={MarkingRubricPage}
+            ></Route>
+          </div>
+        );
+      } else if (localStorage.getItem("type") === "Superviosor") {
+        return (
+          <div>
+            <SupervisorSideNav />
+            <Route path="/" exact component={SupervisorDashboard}></Route>
+            <Route
+              path="/research-topics"
+              exact
+              component={ResearchTopics}
+            ></Route>
+            <Route path="/messages" exact component={Messages}></Route>
+            <Route path="/student-lists" exact component={StudentLists}></Route>
+>>>>>>> feature/supervision_management
           </div>
         );
       }

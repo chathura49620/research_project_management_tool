@@ -12,7 +12,7 @@ const socketIO = require('socket.io');
 
 const fileUpload = require("express-fileupload");
 const connectDB = require("./src/database/connection");
-const marking_rubrics = require('./src/routes/marking-rubric.router')
+const marking_rubrics = require("./src/routes/marking-rubric.router");
 
 const app = express();
 
