@@ -63,13 +63,13 @@ const AddDocuments = () => {
         <div className="col"></div>
         <div className="col">
           <form onSubmit={onSubmit}>
-            <div class="mb-3">
-              <label for="formFile" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="formFile" className="form-label">
                 {filename}
               </label>
               <input
                 style={{ border: "1px solid black" }}
-                class="form-control"
+                className="form-control"
                 type="file"
                 id="formFile"
                 onChange={onChange}

@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
-import { Modal, Button } from 'react-bootstrap';
-import TableViewGroup from './../../components/admin/tables/tableViewGroup';
+import React, { Component } from "react";
+import { Modal, Button } from "react-bootstrap";
+import TableViewGroup from "./../../components/admin/tables/tableViewGroup";
+import swal from "sweetalert";
 
 class ViewResearchGroup extends Component {
-    state = { 
+  state = {
+    groups: [],
+    editOb: {},
+    show: false,
+    panelMembers: [],
+  };
 
-        groups : [],
-        editOb: {},
-        show: false,
-     }
-    
+  handleRemove = async (id) => {
+    console.log("handle remove", id);
 
-   handleRemove = async(id) => {
-
-console.log("handle remove", id);
-
-      const groups  = this.state.groups.filter(group => group._id !== id);
-      this.setState({groups});
+    const groups = this.state.groups.filter((group) => group._id !== id);
+    this.setState({ groups });
 
     //   const response = await fetch("http://localhost:5000/api/users/"+id, {
     //     method: "DELETE",
@@ -26,22 +25,17 @@ console.log("handle remove", id);
     //  // const data = await response.json();
     //   console.log(response);
 
+    //db delete request
+  };
 
-      //db delete request
+  handleShow = (member) => {
+    this.setState({ show: true, editOb: member });
+  };
+  handleClose = () => {
+    this.setState({ show: false });
+  };
 
-
-    } 
-
-    handleShow = (member) => {
-        this.setState({show: true, editOb: member});
-    }
-    handleClose = () => {
-
-        this.setState({show: false});
-    }
-
-    closeAndSetEditedOb = (ob) => {
-       
+  closeAndSetEditedOb = (ob) => {
     const users = [...this.state.users];
 
     const user = users.filter((u) => u._id === ob._id);
@@ -52,65 +46,71 @@ console.log("handle remove", id);
     users[index] = ob;
 
     console.log(users);
-    console.log(ob, "passsssssss")
-    this.setState({ show: false, users});
+    console.log(ob, "passsssssss");
+    this.setState({ show: false, users });
+  };
 
-    }
+  async componentDidMount() {
+    const response = await fetch("http://localhost:5000/api/groups/", {
+      method: "GET",
+    });
 
-   async componentDidMount(){
+    const response2 = await fetch("http://localhost:5000/api/users/", {
+      method: "GET",
+    });
+    const data = await response.json();
+    const data2 = await response2.json();
 
-    
-      const response = await fetch("http://localhost:5000/api/groups/", {
-            method: "GET",
-          });
+    const panelMembers = data2.filter((d) => d.type == "Panel Member");
 
-          const data = await response.json();
+    this.setState({ groups: data, panelMembers: panelMembers });
 
-          this.setState({groups: data});
+    console.log(data);
+  }
 
-          console.log(data);
+  handleSelectChange = (value, group) => {
+    console.log(value, group);
+    let groups = [...this.state.groups];
+    let index = groups.indexOf(group);
+    groups[index].panelMember = value;
+    this.setState({ groups: groups });
+  };
 
+  allocate = async (group) => {
+    const jsonOb = {
+      panelMember: group.panelMember,
+    };
 
-    }
+    const response = await fetch(
+      "http://localhost:5000/api/groups/" + group._id,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(jsonOb),
+      }
+    );
 
+    swal({
+      text: "Panel member Allocated.",
+      icon: "success",
+      timer: "2000",
+    });
+    const data = await response.json(jsonOb);
+  };
 
-
-    render() { 
-        return (
-            <>
-           {/* <TableViewMember filteredItems={this.state.users} onRemove={this.handleRemove}
-            onModalView={this.handleShow}
-            /> */}
-            <TableViewGroup filteredItems={this.state.groups} onRemove={this.handleRemove}
-            onModalView={this.handleShow}/>
-            <Modal show={this.state.show}>
-             <Modal.Header>
-
-               <Modal.Title>Edit Member details</Modal.Title>
-             </Modal.Header>
-             <Modal.Body>
-
-
-            {/* <AskReserveDetails  room={this.state.editOb} onClose={this.handleClose}/> */}
-            {/* <EditUserDetails editOb={this.state.editOb} closeAndSetEditedOb={this.closeAndSetEditedOb}/> */}
-
-
-             </Modal.Body>
-             <Modal.Footer>
-                 <Button variant='danger' onClick={this.handleClose}>
-                  close
-                 </Button>
-                 <Button variant='primary'>
-                   save
-                 </Button>
-
-             </Modal.Footer>
-
-            </Modal>
-            </>
-           
-        );
-    }
+  render() {
+    return (
+      <>
+        <TableViewGroup
+          filteredItems={this.state.groups}
+          onRemove={this.handleRemove}
+          panelMembers={this.state.panelMembers}
+          handleSelectChange={this.handleSelectChange}
+          allocate={this.allocate}
+        />
+      </>
+    );
+  }
 }
- 
+
 export default ViewResearchGroup;

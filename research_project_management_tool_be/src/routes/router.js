@@ -11,6 +11,7 @@ route.put("/api/users/:id", contoller.users.EditUser);
 
 route.post("/api/groups", contoller.groups.create);
 route.get("/api/groups", contoller.groups.getAllGroups);
+route.put("/api/groups/:id", contoller.groups.EditGroup);
 
 route.post("/upload", contoller.documents.create);
 route.post("/addDocuments", contoller.documents.AddDocuments);
