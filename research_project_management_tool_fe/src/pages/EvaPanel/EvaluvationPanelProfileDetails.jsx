@@ -5,14 +5,14 @@ import axios from "axios";
 import "./styles.css";
 
 
-class StudentProfileDetails extends Component {
+class EvaluvationPanelProfileDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
             snackbaropen: false,
             snackbarmsg: "",
-            studentIDError: "",
-            studentNameError: "",
+            evaluvatioPanelMemberID: "",
+            evaluvatioPanelMemberNameError: "",
             studentEmailError: "",
             phoneError: "",
             genderError: "",
@@ -26,7 +26,7 @@ class StudentProfileDetails extends Component {
 
     componentDidMount() {
         axios
-            .get("http://localhost:5000/api/studentrof-details?id=6299c23810db10f31dcaf23b")
+            .get("http://localhost:5000/api/evalPanelMember-details?id=629a1785f72b84349c124055")
             .then((result) => {
                 const userData = result.data;
 
@@ -47,7 +47,7 @@ class StudentProfileDetails extends Component {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch('http://localhost:5000/api/studentrof-details', {
+                    fetch('http://localhost:5000/api/evalPanelMember-details', {
                         method: 'DELETE',
                         headers: {
                             'Accept': 'application/json',
@@ -84,7 +84,7 @@ class StudentProfileDetails extends Component {
 
 
         // if (isValid) {
-        fetch("http://localhost:5000/api/studentrof-details", {
+        fetch("http://localhost:5000/api/evalPanelMember-details", {
             method: "PUT",
             headers: {
                 Accept: "application/json",
@@ -93,8 +93,8 @@ class StudentProfileDetails extends Component {
             },
             body: JSON.stringify({
                 id: '6299c23810db10f31dcaf23b',
-                studentID: event.target.studentID.value,
-                studentName: event.target.studentName.value,
+                evaluvatioPanelMemberID: event.target.evaluvatioPanelMemberID.value,
+                evaluvatioPanelMemberName: event.target.evaluvatioPanelMemberName.value,
                 email: event.target.email.value,
                 phone: event.target.phone.value,
                 gender: event.target.gender.value
@@ -124,20 +124,20 @@ class StudentProfileDetails extends Component {
     }
 
     validate(event) {
-        let studentIDError = "";
-        let studentNameError = "";
+        let evaluvatioPanelMemberIDError = "";
+        let evaluvatioPanelMemberNameError = "";
         let studentEmailError = "";
         let phoneError = "";
         let genderError = "";
 
-        if (!event.target.studentID.value) {
-           studentIDError = "Student ID Field Can Not Be Blank";
+        if (!event.target.evaluvatioPanelMemberID.value) {
+            evaluvatioPanelMemberIDError = "Evaluvation Panel Member ID Field Can Not Be Blank";
         }
-        if (!event.target.studentName.value) {
-            studentNameError = "Student NAme Field Can Not Be Blank";
+        if (!event.target.evaluvatioPanelMemberName.value) {
+            evaluvatioPanelMemberNameError = "Evaluvation Panel MemberField Can Not Be Blank";
         }
         if (!event.target.email.value) {
-           studentEmailError = "Email Field Can Not Be Blank";
+           studentEmailError = "Email Solution Field Can Not Be Blank";
         }
         if (!event.target.phone.value) {
             phoneError = "Phone Number Field Can Not Be Blank";
@@ -146,10 +146,10 @@ class StudentProfileDetails extends Component {
             genderError = "Gender Field Can Not Be Blank";
         }
 
-        if (studentIDError || studentNameError || studentEmailError || phoneError ||genderError) {
+        if (evaluvatioPanelMemberIDError || evaluvatioPanelMemberNameError || studentEmailError || phoneError ||genderError) {
             this.setState({
-                studentIDError: studentIDError,
-                studentNameError: studentNameError,
+                evaluvatioPanelMemberIDError: evaluvatioPanelMemberIDError,
+                evaluvatioPanelMemberNameError: evaluvatioPanelMemberNameError,
                 studentEmailError: studentEmailError,
                 phoneError: phoneError,
                 genderError:genderError,
@@ -180,30 +180,30 @@ class StudentProfileDetails extends Component {
                             {/* {this.state.userData.map(i => ( */}
 
                             {/* <div key={i._id}> */}
-                            <Form.Group controlId="studentID">
+                            <Form.Group controlId="evaluvatioPanelMemberID">
                                 <Form.Label style={{ fontWeight: "bold" }}>
-                                    Student ID
+                                    Evaluvation Panel Member ID
                                 </Form.Label>
                                 <Form.Control
                                     style={{ border: "1px solid #050139" }}
                                     type="text"
-                                    name="studentID"
+                                    name="evaluvatioPanelMemberID"
                                     placeholder="Group ID"
                                     defaultValue={this.state.userData.studentID}
                                 />
                                 <div style={{ background: "#f8d7da" }}>
-                                  {this.state.studentIDError}
+                                  {this.state.evaluvatioPanelMemberIDError}
                                 </div>
                             </Form.Group>
-                            <Form.Group controlId="studentName">
+                            <Form.Group controlId="evaluvatioPanelMemberName">
                                 <Form.Label style={{ fontWeight: "bold" }}>
-                                    Student Name
+                                Evaluvation Panel Member Name
                                 </Form.Label>
                                 <Form.Control
                                     style={{ border: "1px solid #050139" }}
                                     type="text"
-                                    name="studentName"
-                                    placeholder="studentName"
+                                    name="evaluvatioPanelMemberName"
+                                    placeholder="evaluvatioPanelMemberName"
                                     defaultValue={this.state.userData.studentName}
                                 />
                                 <div style={{ background: "#f8d7da" }}>
@@ -288,4 +288,4 @@ class StudentProfileDetails extends Component {
     }
 }
 
-export default StudentProfileDetails;
+export default EvaluvationPanelProfileDetails;
