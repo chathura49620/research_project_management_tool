@@ -3,7 +3,7 @@ import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
 import "./styles.css";
-
+//import addorder from "../../pages/Student/assets/addorderpic.png";
 
 class AddTopicDetailsForm2 extends Component {
   constructor(props) {
@@ -111,11 +111,11 @@ class AddTopicDetailsForm2 extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="heading">Add First Student Details</h1>
+        <h1 className="heading">Add Topic Details</h1>
 
-        <div className="center">
-          {/* <img src={addorder} alt="leavepic" /> */}
-        </div>
+        {/* <div className="center">
+          <img src={addorder} alt="leavepic" />
+        </div> */}
 
         <div className="row">
           <div className="col-3"></div>

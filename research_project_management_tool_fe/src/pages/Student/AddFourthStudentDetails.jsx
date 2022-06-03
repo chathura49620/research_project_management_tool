@@ -108,7 +108,7 @@ class AddFourthStudentDetails extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="heading">Add First Student Details</h1>
+        <h1 className="heading">Add Fourth Student Details</h1>
 
         <div className="center">
           {/* <img src={addorder} alt="leavepic" /> */}

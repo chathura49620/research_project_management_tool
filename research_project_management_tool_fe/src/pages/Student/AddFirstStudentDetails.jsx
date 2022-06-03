@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form, FormGroup } from "react-bootstrap";
 import swal from "sweetalert";
 import axios from "axios";
-import "./styles.css";
 
+//import "./styles.css";import addorder from "../../pages/Student/assets/addorder.JPG";
 
 class AddFirstStudentDetails extends Component {
   constructor(props) {
@@ -97,7 +97,7 @@ class AddFirstStudentDetails extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="heading">Add First Student Details</h1>
+        <h2 className="heading">Add First Student Details</h2>
 
         {/* <div className="center">
           <img src={addorder} alt="leavepic" />
@@ -109,11 +109,11 @@ class AddFirstStudentDetails extends Component {
           <div className="col">
             <Form onSubmit={this.handleSubmit}>
               <Form.Group>
-                <Form.Group controlId="studentID">
-                  <Form.Label style={{ fontWeight: "bold" }}>
+              <Form.Group controlId="studentID">               
+                <Form.Label style={{ fontWeight: "bold" }}>
                     Student Id
-                  </Form.Label>
-                  <Form.Control
+                  </Form.Label>              
+                <Form.Control
                     style={{ border: "1px solid #050139" }}
                     type="text"
                     name="studentID"
@@ -180,7 +180,7 @@ class AddFirstStudentDetails extends Component {
               <Form.Group>
                 <Button
                   className="my-1"
-                  style={{ backgroundColor: "#7121AD", color: "white" }}
+                  style={{ backgroundColor: "#21ad62", color: "white" }}
                   type="submit"
                 >
                   Next
