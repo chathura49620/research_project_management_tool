@@ -22,7 +22,7 @@ class SupervisorEmail extends Component {
  
 
   handleSubmit(event, props) {
-    console.log(event.target.topicName.value);
+    //console.log(event.target.topicName.value);
     console.log(event);
     const isValid = this.validate(event);
     event.preventDefault();
