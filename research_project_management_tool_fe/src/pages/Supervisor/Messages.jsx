@@ -17,7 +17,7 @@ class Messages extends Component {
   }
 
   handleSubmit(event, props) {
-    console.log(event.target.studentID.value);
+    // console.log(event.target.studentID.value);
     console.log(event);
     const isValid = this.validate(event);
     event.preventDefault();
@@ -33,14 +33,14 @@ class Messages extends Component {
         body: JSON.stringify({
           title: event.target.title.value,
           messagedesc: event.target.messagedesc.value,
-          type: event.target.email.type,
+          type: event.target.type.value,
         }),
       })
         .then((res) => res.json())
         .then(
           (result) => {
-            window.location.href =
-              "http://localhost:3000/stuGroup-registration-2";
+            // window.location.href =
+              // "http://localhost:3000/stuGroup-registration-2";
           },
           (error) => {
             this.setState({ snackbaropen: true, snackbarmsg: "Failed" });

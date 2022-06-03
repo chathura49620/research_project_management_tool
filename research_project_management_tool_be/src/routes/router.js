@@ -38,6 +38,10 @@ route.get("/api/topic-details/", contoller.topicDetails.find);
 route.put("/api/topic-details/", contoller.topicDetails.update);
 //route.delete("/api/topic-details/", contoller.topicDetails.delete);
 
+route.post("/api/research-topic-details/", contoller.studentTopicRegistrationDetails.create);
+route.get("/api/research-topic-details/", contoller.studentTopicRegistrationDetails.find);
+route.put("/api/research-topic-details/", contoller.studentTopicRegistrationDetails.update);
+
 
 //Student Group Registration APIs
 route.post("/api/stuGroupDet-details/", contoller.stuGroupDetails.create);

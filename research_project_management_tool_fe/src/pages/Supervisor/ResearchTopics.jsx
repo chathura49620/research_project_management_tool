@@ -49,7 +49,7 @@ class ResearchTopics extends Component {
   };
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/api/topic-details/", {
+    const response = await fetch("http://localhost:5000/api/research-topic-details/", {
       method: "GET",
     });
 
