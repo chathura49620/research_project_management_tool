@@ -22,7 +22,7 @@ exports.create = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Error: Could Not Add Supervisor Details.",
+        message: err.message || "Error: Could Not Add Student Details.",
       });
     });
 };
@@ -37,14 +37,14 @@ exports.find = (req, res) => {
           if (!data) {
             res
               .status(404)
-              .send({ message: "Could Not Find Supervisor Details With ID" + id });
+              .send({ message: "Could Not Find Student Details With ID" + id });
           } else {
             res.send(data);
           }
         })
         .catch((err) => {
           res.status(500).send({
-            message: "Error While Retrieving Supervisor Details With ID" + id,
+            message: "Error While Retrieving Student Details With ID" + id,
           });
         });
     } else {
@@ -55,7 +55,7 @@ exports.find = (req, res) => {
         })
         .catch((err) => {
           res.status(500).send({
-            message: err.message || "Error: Cannot Retrieve Supervisor Details",
+            message: err.message || "Error: Cannot Retrieve Student Details",
           });
         });
     }
@@ -76,7 +76,7 @@ exports.update = (req, res) => {
         if (!data) {
           res
             .status(400)
-            .send({ message: "Supervisor Details Is Not Found" });
+            .send({ message: "Student Details Is Not Found" });
         } else {
           res.send(data);
         }
@@ -95,10 +95,10 @@ exports.update = (req, res) => {
       .then((data) => {
         if (!data) {
           res.status(400).send({
-            message: `Can Not Delete Supervisor Details With $(id).`,
+            message: `Can Not Delete Student Details With $(id).`,
           });
         } else {
-          res.send({ message: "Supervisor Details Was Deleted" });
+          res.send({ message: "Student Details Was Deleted" });
         }
       })
       .catch((err) => {
