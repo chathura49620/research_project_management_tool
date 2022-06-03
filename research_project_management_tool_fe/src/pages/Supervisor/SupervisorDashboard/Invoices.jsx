@@ -13,13 +13,12 @@ function Invoices() {
               {/* <img src={AvatarImage} alt="" /> */}
             </Avatar>
             <TextContainer>
-              <Title><div style={{fontSize: 18}}>Alexander Williams</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>ABC Holdings</div></SubTitle>
+              <Title><div style={{fontSize: 18}}>Sheikha Hanna</div></Title>
+              <SubTitle><div style={{fontSize: 17}}>Dev Crawlers</div></SubTitle>
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Paid" paid />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
+            <Badge content="Submitted" paid />
           </Container>
         </Invoice>
         <Invoice>
@@ -33,8 +32,7 @@ function Invoices() {
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Late" late />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
+            <Badge content="Pending" late />
           </Container>
         </Invoice>
       </CardContent>

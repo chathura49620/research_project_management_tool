@@ -19,20 +19,20 @@ function MainContent({NumOfReserved, NumOfAvailable, reservedRooms}) {
             <Info NumOfReserved={NumOfReserved} NumOfAvailable={NumOfAvailable}/>
           </ColumnOne1>
           <ColumnTwo1>
-            <TitleText><div style={{fontSize: 25}}>Your Ordnafks</div></TitleText>
+            <TitleText><div style={{fontSize: 25}}>My Statistics</div></TitleText>
             <Projects reservedRooms={reservedRooms}/>
           </ColumnTwo1>
         </SectionOne>
         <SectionTwo>
           <ColumnOne2>
             <InvoiceContainer>
-              <TitleText><div style={{fontSize: 25}}>Recent Invoices</div></TitleText>
+              <TitleText><div style={{fontSize: 25}}>Recent Submissions</div></TitleText>
               <Invoices />
             </InvoiceContainer>
            
           </ColumnOne2>
           <ColumnTwo2>
-            <TitleText><div style={{fontSize: 25}}>Recommended Project</div></TitleText>
+            <TitleText><div style={{fontSize: 25}}>Recent Submissions</div></TitleText>
             {/* <ProjectRecommendation /> */}
              <JoinSlack />
           </ColumnTwo2>
