@@ -53,7 +53,6 @@ class Dashboard extends Component {
         return (
           <div>
             <EvaPanelSideNav />
-<<<<<<< HEAD
             <Route path="/" exact component={StudentDashboard}></Route>
             <Route path="/topic-evaluation" exact component={TopicEval}></Route>
             <Route path="/marking-rubrics" exact component={MarkingRubricPage}></Route>
@@ -75,7 +74,6 @@ class Dashboard extends Component {
             <Route path="/topic-registration-2" exact component={AddTopicDetailsForm2}></Route>
             <Route path="/email-sending" exact component={SupervisorEmail}></Route>
             <Route path="/student-profile-details" exact component={StudentProfileDetails}></Route>
-=======
             <Route path="/" exact component={EvaPanelDashboard}></Route>
             <Route
               path="/marking-rubrics"
@@ -96,14 +94,6 @@ class Dashboard extends Component {
             ></Route>
             <Route path="/messages" exact component={Messages}></Route>
             <Route path="/student-lists" exact component={StudentLists}></Route>
->>>>>>> feature/supervision_management
-          </div>
-        );
-      }
-      else if (localStorage.getItem("type") === "Superviosor") {
-        return (
-          <div>
-         
           </div>
         );
       }
