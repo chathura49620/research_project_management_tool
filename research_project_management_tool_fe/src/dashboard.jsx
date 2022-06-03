@@ -8,7 +8,6 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import ViewResearchGroup from "./pages/Admin/ViewResearchGroups";
 import AddDocuments from "./components/admin/forms/addDocuments";
 import ViewUploadedDocuments from "./pages/Admin/viewUploadedDocuments";
-import RegisterStudent from "./components/admin/forms/registerStudent";
 
 import EvaPanelDashboard from "./pages/EvaPanel/EvaPanelDashboard";
 import EvaPanelSideNav from "./components/EvaPanel/sideNav/Sidebar";
@@ -31,6 +30,7 @@ import ResearchTopics from "./pages/Supervisor/ResearchTopics";
 import Messages from "./pages/Supervisor/Messages";
 import StudentLists from "./pages/Supervisor/Messages";
 import SupervisorDashboard from "./pages/Supervisor/SupervisorDashboard";
+import RegisterStudent  from "./components/admin/forms/registerStudent"
 
 class Dashboard extends Component {
   state = {};
@@ -102,7 +102,15 @@ class Dashboard extends Component {
        else {
       }
     } else {
-      return <LoginUser />;
+      return (
+        <>
+        <Route path="/" exact component={LoginUser}></Route>
+        <Route path="/registerStudent" exact component={RegisterStudent}></Route>
+
+        </>
+        
+
+      )
     }
   }
 }

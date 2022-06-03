@@ -14,6 +14,7 @@ const TableViewMember = ({filteredItems, onRemove, onModalView}) => {
       <th scope="col">contact Number</th>
       <th scope="col">Age</th>
       <th scope="col">Type</th>
+      <th scope="col">Password</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,7 @@ const TableViewMember = ({filteredItems, onRemove, onModalView}) => {
       <td>{member.contactNumber}</td>
       <td>{member.age}</td>
       <td>{member.type}</td>
+      <td>{member.password}</td>
       <td><button onClick={() => onModalView(member)}  className='btn btn-sm btn-primary'>modify</button></td>
       <td><button onClick={() => onRemove(member._id)} className='btn btn-sm btn-danger'>remove</button></td>
       

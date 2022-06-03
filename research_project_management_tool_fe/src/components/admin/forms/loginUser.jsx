@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Joi from "joi-browser";
 import axios from "axios";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 import FormSuper from "./../reusables/formsuper";
 
@@ -62,7 +63,9 @@ class LoginUser extends FormSuper {
               </div>
 
               {this.renderButton("Sign in")}
+              <Link to="/registerStudent">Sign in as a Student</Link>
             </form>
+
           </div>
           <div className="col-4"></div>
         </div>

@@ -8,11 +8,9 @@ exports.documents = require("./document.controller");
 //student
 exports.stuGroupDetails = require("./studentGroupDetails.controller");
 exports.studentTopicRegistrationDetails = require("./topicDetails.controller");
-<<<<<<< HEAD
 exports.superviserEmailDet = require("./supervisorEmailDetails.contoller");
-=======
 exports.messageDetails = require("./messages.controller");
->>>>>>> feature/supervision_management
+
 
 
 //eva panel
