@@ -48,7 +48,7 @@ class AddThirdStudentDetails extends Component {
         .then((res) => res.json())
         .then(
           (result) => {
-            window.location.href = 'http://localhost:3000/stuGroup-registration-3';
+            window.location.href = 'http://localhost:3000/stuGroup-registration-4';
           },
           (error) => {
             this.setState({ snackbaropen: true, snackbarmsg: "Failed" });
