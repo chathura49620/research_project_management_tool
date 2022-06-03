@@ -128,7 +128,16 @@ class AddTopicDetailsForm1 extends Component {
                     {this.state.topicNameError}
                   </div>
                 </Form.Group>
-                <Form.Group controlId="abstract">
+                <div class="form-group">
+                <Form.Label style={{ fontWeight: "bold" } }>               
+                 Abstract               
+                  </Form.Label>
+              <textarea class="form-control" id="abstract"  name="abstract" rows="6"   placeholder=" Abstract" style={{ border: "1px solid #050139" }}></textarea>
+              <div style={{ background: "#f8d7da" }}>
+                    {this.state.abstractError}
+              </div>
+                </div>
+                {/* <Form.Group controlId="abstract">
                   <Form.Label style={{ fontWeight: "bold" } }>               
                  Abstract               
                   </Form.Label>
@@ -141,7 +150,7 @@ class AddTopicDetailsForm1 extends Component {
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.abstractError}
                   </div>
-                </Form.Group>
+                </Form.Group> */}
               </Form.Group>
               <Form.Group controlId="topicDescription">
                 <Form.Label style={{ fontWeight: "bold" }}>
