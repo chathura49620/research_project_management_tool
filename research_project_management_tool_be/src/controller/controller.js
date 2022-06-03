@@ -7,4 +7,5 @@ exports.documents = require("./document.controller");
 
 exports.stuGroupDetails = require("./studentGroupDetails.controller");
 exports.studentTopicRegistrationDetails = require("./topicDetails.controller");
+exports.messageDetails = require("./messages.controller");
 
