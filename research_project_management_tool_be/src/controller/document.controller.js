@@ -44,3 +44,15 @@ exports.getAllDocuments = async (req, res) => {
     });
   }
 };
+
+exports.RemoveDocument = async (req, res) => {
+  const id = req.params.id;
+
+  // const responce =  await User.deleteOne({_id: id});
+  try {
+    await Document.deleteOne({ _id: id });
+    res.json({ status: "ok" });
+  } catch (err) {
+    res.json({ status: "error" });
+  }
+};

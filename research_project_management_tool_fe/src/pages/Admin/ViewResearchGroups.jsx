@@ -17,6 +17,14 @@ class ViewResearchGroup extends Component {
     const groups = this.state.groups.filter((group) => group._id !== id);
     this.setState({ groups });
 
+    const response = await fetch("http://localhost:5000/api/groups/" + id, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    // const data = await response.json();
+    console.log(response);
+
     //   const response = await fetch("http://localhost:5000/api/users/"+id, {
     //     method: "DELETE",
     //     headers: { "Content-Type": "application/json" },

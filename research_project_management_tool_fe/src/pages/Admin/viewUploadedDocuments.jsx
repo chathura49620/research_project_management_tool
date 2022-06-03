@@ -11,8 +11,18 @@ class ViewUploadedDocuments extends Component {
   handleRemove = async (id) => {
     console.log("handle remove", id);
 
-    const groups = this.state.groups.filter((group) => group._id !== id);
-    this.setState({ groups });
+    const documents = this.state.documents.filter(
+      (document) => document._id !== id
+    );
+    this.setState({ documents });
+
+    const response = await fetch("http://localhost:5000/api/documents/" + id, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    // const data = await response.json();
+    console.log(response);
   };
 
   handleShow = (member) => {

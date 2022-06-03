@@ -58,3 +58,15 @@ exports.EditGroup = async (req, res) => {
     res.json({ status: "error" });
   }
 };
+
+exports.RemoveGroup = async (req, res) => {
+  const id = req.params.id;
+
+  // const responce =  await User.deleteOne({_id: id});
+  try {
+    await Group.deleteOne({ _id: id });
+    res.json({ status: "ok" });
+  } catch (err) {
+    res.json({ status: "error" });
+  }
+};
