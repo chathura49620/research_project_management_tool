@@ -13,13 +13,13 @@ function Invoices() {
               {/* <img src={AvatarImage} alt="" /> */}
             </Avatar>
             <TextContainer>
-              <Title><div style={{fontSize: 18}}>Alexander Williams</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>ABC Holdings</div></SubTitle>
+              <Title><div style={{fontSize: 18}}>Evaluvation One Subbmission</div></Title>
+             
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Paid" paid />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
+            <Badge content="Overdue" paid />
+           
           </Container>
         </Invoice>
         <Invoice>
@@ -28,13 +28,13 @@ function Invoices() {
               {/* <img src={AvatarImage2} alt="" /> */}
             </Avatar>
             <TextContainer>
-              <Title><div style={{fontSize: 18}}>John Philips</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>Inchor Associates</div></SubTitle>
+              <Title><div style={{fontSize: 18}}>PP1 Subbmission</div></Title>
+            
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Late" late />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
+            <Badge content="Soon" late />
+          
           </Container>
         </Invoice>
       </CardContent>

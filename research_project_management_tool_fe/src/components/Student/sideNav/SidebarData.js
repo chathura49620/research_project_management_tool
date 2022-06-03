@@ -13,23 +13,30 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
-    title: "Topic Reditration",
-    path: "/topic-registration",
-    icon: <IoIcons.IoMdPlay />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-  },
-  
-  {
     title: "Group Registration ",
     path: "/stuGroup-registration",
     icon: <IoIcons.IoMdPerson />,
   },
   {
-    title: "Email Sending",
+    title: "Topic Registration",
+    path: "/topic-registration",
+    icon: <IoIcons.IoMdPlay />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  }, 
+  
+  {
+    title: "Supervisor Approval ",
     path: "/email-sending",
     icon: <IoIcons.IoMdPerson />,
   },
+  {
+    title: "Document Submission",
+    path: "/document-substu",
+    icon: <IoIcons.IoMdPlay />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },  
   {
     title: "Profile",
     path: "/student-profile-details",

@@ -62,6 +62,7 @@ class Dashboard extends Component {
             <StudentSideNav />
             <Route path="/" exact component={StudentDashboard}></Route>
             <Route path="/topic-registration" exact component={AddTopicDetailsForm1}></Route>
+            <Route path="/document-substu" exact component={AddDocuments}></Route>
             <Route path="/stuGroup-registration" exact component={AddFirstStudentDetails}></Route>
             <Route path="/stuGroup-registration-2" exact component={AddSecondStudentDetails}></Route>
             <Route path="/stuGroup-registration-3" exact component={AddThirdStudentDetails}></Route>

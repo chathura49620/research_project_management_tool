@@ -136,51 +136,10 @@ class AddTopicDetailsForm2 extends Component {
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.groupIDError}
                   </div>
+
+                  
                 </Form.Group>
-                <Form.Group controlId="researchProblem">
-                  <Form.Label style={{ fontWeight: "bold" }}>
-                    Research Problem
-                  </Form.Label>
-                  <Form.Control
-                    style={{ border: "1px solid #050139" }}
-                    type="text"
-                    name=" researchProblem "
-                    placeholder=" Research Problem"
-                  />
-                  <div style={{ background: "#f8d7da" }}>
-                    {this.state.researchProblemError}
-                  </div>
-                </Form.Group>
-              </Form.Group>
-              <Form.Group controlId="researchSolution">
-                <Form.Label style={{ fontWeight: "bold" }}>
-                  Research Solution
-                </Form.Label>
-                <Form.Control
-                  style={{ border: "1px solid #050139" }}
-                  type="text"
-                  name="researchSolution"
-                  placeholder=" Research Solution"
-                />
-                <div style={{ background: "#f8d7da" }}>
-                  {this.state.researchSolutionError}
-                </div>
-              </Form.Group>
-              <Form.Group controlId="technology">
-                <Form.Label style={{ fontWeight: "bold" }}>
-                  Technology
-                </Form.Label>
-                <Form.Control
-                  style={{ border: "1px solid #050139" }}
-                  type="text"
-                  name="technology"
-                  placeholder="Technology"
-                />
-                <div style={{ background: "#f8d7da" }}>
-                  {this.state.technologyError}
-                </div>
-              </Form.Group>
-              <Form.Group controlId="groupLeaderEmail">
+                <Form.Group controlId="groupLeaderEmail">
                 <Form.Label style={{ fontWeight: "bold" }}>
                   Group Leader Email
                 </Form.Label>
@@ -194,10 +153,42 @@ class AddTopicDetailsForm2 extends Component {
                   {this.state.technologyError}
                 </div>
               </Form.Group>
+               
+                <Form.Group controlId="researchProblem">
+                  <Form.Label style={{ fontWeight: "bold" }}>
+                    Research Problem
+                  </Form.Label>
+                  <textarea class="form-control" id="researchProblem"  name="researchProblem" rows="6"   placeholder=" Research Problem" style={{ border: "1px solid #050139" }}></textarea>
+                  <div style={{ background: "#f8d7da" }}>
+                    {this.state.researchProblemError}
+                  </div>
+                </Form.Group>
+              </Form.Group>
+              <Form.Group controlId="researchSolution">
+                <Form.Label style={{ fontWeight: "bold" }}>
+                  Research Solution
+                </Form.Label>
+                <textarea class="form-control" id="researchSolution"  name="researchSolution" rows="6"   placeholder=" Research Solution" style={{ border: "1px solid #050139" }}></textarea>
+                
+                <div style={{ background: "#f8d7da" }}>
+                  {this.state.researchSolutionError}
+                </div>
+              </Form.Group>
+              <Form.Group controlId="technology">
+                <Form.Label style={{ fontWeight: "bold" }}>
+                  Technology
+                </Form.Label>
+                <textarea class="form-control" id="technology"  name="technology" rows="6"   placeholder="Technology" style={{ border: "1px solid #050139" }}></textarea>
+                             
+                <div style={{ background: "#f8d7da" }}>
+                  {this.state.technologyError}
+                </div>
+              </Form.Group>
+             
               <Form.Group>
                 <Button
                   className="my-1"
-                  style={{ backgroundColor: "#7121AD", color: "white" }}
+                  style={{ backgroundColor: "#478778",  border: "2px solid #023020",color: "Black" }} 
                   type="submit"
                 >
                   Submit

@@ -7,6 +7,7 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
+import "./styles.css";
 
 const Nav = styled.div`
   background: #fdfefe;
@@ -26,9 +27,9 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #2471a3;
-  width: 250px;
-  height: 100vh;
+  background: #5F8575;
+  width: 280px;
+  height:100vh;
   border-style: solid;
   display: flex;
   justify-content: center;
@@ -53,18 +54,19 @@ const Sidebar = () => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: " #17202a " }}>
+      <IconContext.Provider value={{ color: " black" }}>
         <Nav>
           <NavIcon to="#">
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-          <h2>Research Project Management Tool</h2>
+          <h4 >Research Project Management Tool</h4>
           <button
             className="btn btn-sm btn-danger"
             onClick={() => {
               localStorage.removeItem("logged");
               window.location.href = "/";
-            }}
+            }
+          }
           >
             Log out
           </button>

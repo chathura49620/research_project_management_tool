@@ -100,7 +100,7 @@ class SupervisorEmail extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="heading">Add First Student Details</h1>
+        <h1 className="heading">Supervisor Email</h1>
 
         <div className="center">
           {/* <img src={addorder} alt="leavepic" /> */}
@@ -159,12 +159,8 @@ class SupervisorEmail extends Component {
                 <Form.Label style={{ fontWeight: "bold" }}>
                 Message
                 </Form.Label>
-                <Form.Control
-                  style={{ border: "1px solid #050139" }}
-                  type="text"
-                  name="message"
-                  placeholder=" Message"
-                />
+                <textarea class="form-control" id="message"  name="message" rows="6"   placeholder="Message" style={{ border: "1px solid #050139" }}></textarea>
+                
                 <div style={{ background: "#f8d7da" }}>
                   {this.state.topicDescriptionError}
                 </div>
@@ -173,7 +169,7 @@ class SupervisorEmail extends Component {
               <Form.Group>
                 <Button
                   className="my-1"
-                  style={{ backgroundColor: "#7121AD", color: "white" }}
+                  style={{ backgroundColor: "#478778",  border: "2px solid #023020",color: "Black" }} 
                   type="submit"
                 >
                   Submit

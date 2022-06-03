@@ -237,10 +237,10 @@ class StudentProfileDetails extends Component {
                             <Form.Group>
                                 <Button
                                     className="my-1"
-                                    style={{ backgroundColor: "#7121AD", color: "white" }}
+                                    style={{ backgroundColor: "#478778",  border: "2px solid #023020",color: "Black" }}  
                                     type="submit"
                                 >
-                                    Submit
+                                    Edit Details
                                 </Button>
 
 
@@ -252,11 +252,11 @@ class StudentProfileDetails extends Component {
                         </Form>
                         <Button
                             className="my-1 ml-4"
-                            style={{ backgroundColor: "red", color: "white" }}
+                            style={{ backgroundColor: "#de1738", border: "2px solid black" ,color: "black" }}
                             type="submit"
                             onClick={() => this.deleteProfile()}
                         >
-                            Delete Account
+                            Delete Profile
                         </Button>
                     </div>
 

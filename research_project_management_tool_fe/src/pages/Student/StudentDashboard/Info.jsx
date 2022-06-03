@@ -10,8 +10,8 @@ function Info({NumOfReserved, NumOfAvailable}) {
           <Row>
             <Digit><div style={{fontSize: 15}}>{NumOfReserved}</div></Digit>
             <InfoContainer>
-              <Title ><div style={{fontSize: 17}}>RESERVED</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>In top 20%</div></SubTitle>
+              <Title ><div style={{fontSize: 17}}>Completed</div></Title>
+              <SubTitle><div style={{fontSize: 17}}>In  80%</div></SubTitle>
             </InfoContainer>
           </Row>
         </CardContent>
@@ -21,7 +21,7 @@ function Info({NumOfReserved, NumOfAvailable}) {
           <Row>
             <Digit><div style={{fontSize: 15}}>{NumOfAvailable}</div></Digit>
             <InfoContainer>
-              <Title><div style={{fontSize: 17}}>AVAILABLE</div></Title>
+              <Title><div style={{fontSize: 17}}>Incompleted</div></Title>
               <SubTitle><div style={{fontSize: 17}}>In top 20%</div></SubTitle>
             </InfoContainer>
           </Row>

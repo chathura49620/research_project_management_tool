@@ -19,23 +19,26 @@ function MainContent({NumOfReserved, NumOfAvailable, reservedRooms}) {
             <Info NumOfReserved={NumOfReserved} NumOfAvailable={NumOfAvailable}/>
           </ColumnOne1>
           <ColumnTwo1>
-            <TitleText><div style={{fontSize: 25}}>Your Reservations</div></TitleText>
+            <TitleText><div style={{fontSize: 25}}>Your Progress</div></TitleText>
+           
             <Projects reservedRooms={reservedRooms}/>
           </ColumnTwo1>
         </SectionOne>
         <SectionTwo>
           <ColumnOne2>
             <InvoiceContainer>
-              <TitleText><div style={{fontSize: 25}}>Recent Invoices</div></TitleText>
+              <TitleText><div style={{fontSize: 25}}>Recent Overdues</div></TitleText>
               <Invoices />
             </InvoiceContainer>
            
           </ColumnOne2>
-          <ColumnTwo2>
-            <TitleText><div style={{fontSize: 25}}>Recommended Project</div></TitleText>
-            {/* <ProjectRecommendation /> */}
-             <JoinSlack />
-          </ColumnTwo2>
+          <ColumnOne2>
+            <InvoiceContainer>
+              <TitleText><div style={{fontSize: 25}}>Recent Submmisons</div></TitleText>
+              <Invoices />
+            </InvoiceContainer>
+           
+          </ColumnOne2>
         </SectionTwo>
       </SubContainer>
     </Container>

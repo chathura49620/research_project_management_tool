@@ -128,40 +128,23 @@ class AddTopicDetailsForm1 extends Component {
                     {this.state.topicNameError}
                   </div>
                 </Form.Group>
-                <div class="form-group">
-                <Form.Label style={{ fontWeight: "bold" } }>               
-                 Abstract               
-                  </Form.Label>
-              <textarea class="form-control" id="abstract"  name="abstract" rows="6"   placeholder=" Abstract" style={{ border: "1px solid #050139" }}></textarea>
-              <div style={{ background: "#f8d7da" }}>
-                    {this.state.abstractError}
-              </div>
-                </div>
-                {/* <Form.Group controlId="abstract">
+               
+                <Form.Group controlId="abstract">
                   <Form.Label style={{ fontWeight: "bold" } }>               
                  Abstract               
                   </Form.Label>
-                  <Form.Control
-                    style={{ border: "1px solid #050139" }}
-                    type="text"
-                    name="abstract"
-                    placeholder=" Abstract"
-                  />
+                    <textarea class="form-control" id="abstract"  name="abstract" rows="6"   placeholder=" Abstract" style={{ border: "1px solid #050139" }}></textarea>
                   <div style={{ background: "#f8d7da" }}>
                     {this.state.abstractError}
                   </div>
-                </Form.Group> */}
+                </Form.Group>
               </Form.Group>
+              
               <Form.Group controlId="topicDescription">
                 <Form.Label style={{ fontWeight: "bold" }}>
                   Topic Description
                 </Form.Label>
-                <Form.Control
-                  style={{ border: "1px solid #050139" }}
-                  type="text"
-                  name="topicDescription"
-                  placeholder=" Topic Description"
-                />
+                 <textarea class="form-control" id="topicDescription"  name="topicDescription" rows="6"   placeholder=" Topic Description" style={{ border: "1px solid #050139" }}></textarea>
                 <div style={{ background: "#f8d7da" }}>
                   {this.state.topicDescriptionError}
                 </div>
@@ -170,7 +153,7 @@ class AddTopicDetailsForm1 extends Component {
               <Form.Group>
                 <Button
                   className="my-1"
-                  style={{ backgroundColor: "#7121AD", color: "white" }}
+                  style={{ backgroundColor: "#478778",  border: "2px solid #023020",color: "Black" }} 
                   type="submit"
                 >
                   Next
