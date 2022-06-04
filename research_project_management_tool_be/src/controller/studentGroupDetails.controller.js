@@ -1,5 +1,6 @@
 var studentGroupDetails = require("../model/student.GroupDetails.model");
 
+//Save Methode
 exports.create = (req, res) => {
   // validate request
   if (!req.body) {
@@ -27,6 +28,7 @@ exports.create = (req, res) => {
     });
 };
 
+//Find Methode
 exports.find = (req, res) => {
     if (req.query.id) {
       const id = req.query.id;
