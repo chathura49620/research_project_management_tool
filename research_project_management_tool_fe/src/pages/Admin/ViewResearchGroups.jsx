@@ -22,18 +22,7 @@ class ViewResearchGroup extends Component {
       headers: { "Content-Type": "application/json" },
     });
 
-    // const data = await response.json();
     console.log(response);
-
-    //   const response = await fetch("http://localhost:5000/api/users/"+id, {
-    //     method: "DELETE",
-    //     headers: { "Content-Type": "application/json" },
-    //   });
-
-    //  // const data = await response.json();
-    //   console.log(response);
-
-    //db delete request
   };
 
   handleShow = (member) => {

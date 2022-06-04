@@ -6,21 +6,17 @@ import TextArea from "./textarea";
 import Radio from "./radio";
 
 class FormSuper extends Component {
-
-
   handleChange = ({ currentTarget }) => {
-     const errors = { ...this.state.errors };
+    const errors = { ...this.state.errors };
 
     const errorMessage = this.validateProperty(currentTarget);
 
     if (errorMessage) errors[currentTarget.name] = errorMessage;
     else delete errors[currentTarget.name];
     const data = { ...this.state.data };
-    
+
     data[currentTarget.name] = currentTarget.value;
     this.setState({ data: data, errors: errors });
-    
-
   };
 
   validateProperty = (input) => {
@@ -57,10 +53,7 @@ class FormSuper extends Component {
 
   renderButton(label) {
     return (
-      <button
-        className="btn btn-sm btn-primary my-2"
-        type="submit"
-      >
+      <button className="btn btn-sm btn-primary my-2" type="submit">
         {label}
       </button>
     );
@@ -69,14 +62,13 @@ class FormSuper extends Component {
   renderInput(name, label, type = "text") {
     return (
       <Input
-      type={type}
-      name={name}
-      label={label}
-      value={this.state.data[name]}
-      onChange={this.handleChange}
-      error={this.state.errors[name]}
+        type={type}
+        name={name}
+        label={label}
+        value={this.state.data[name]}
+        onChange={this.handleChange}
+        error={this.state.errors[name]}
       />
-      
     );
   }
 

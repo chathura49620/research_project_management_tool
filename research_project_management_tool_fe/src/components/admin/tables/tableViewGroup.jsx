@@ -40,6 +40,7 @@ const TableViewGroup = ({
             <td>
               <select
                 id="lang"
+                className="form-control"
                 value={group.panelMember}
                 onChange={(e) => handleSelectChange(e.target.value, group)}
               >
