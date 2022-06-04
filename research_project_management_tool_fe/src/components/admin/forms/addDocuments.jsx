@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
 import Progress from "./../reusables/progress";
+import DocumentImage from "./../../../assests/ResearchPaper.svg";
 
 const AddDocuments = () => {
   const [file, setFile] = useState("");
@@ -82,6 +83,17 @@ const AddDocuments = () => {
             />
           </form>
           <Progress percentage={uploadPercentage} />
+        </div>
+        <div className="col"></div>
+      </div>
+      <div className="row">
+        <div className="col"></div>
+        <div className="col">
+          <img
+            style={{ width: "100%", heigth: "100%" }}
+            src={DocumentImage}
+            alt=""
+          />
         </div>
         <div className="col"></div>
       </div>

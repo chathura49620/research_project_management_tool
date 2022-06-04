@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import TableViewGroup from "./../../components/admin/tables/tableViewGroup";
 import swal from "sweetalert";
+import axios from "axios";
 
 class ViewResearchGroup extends Component {
   state = {
@@ -12,17 +13,23 @@ class ViewResearchGroup extends Component {
   };
 
   handleRemove = async (id) => {
-    console.log("handle remove", id);
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((result) => {
+      if (result) {
+        console.log("handle remove", id);
 
-    const groups = this.state.groups.filter((group) => group._id !== id);
-    this.setState({ groups });
-
-    const response = await fetch("http://localhost:5000/api/groups/" + id, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+        const groups = this.state.groups.filter((group) => group._id !== id);
+        this.setState({ groups });
+        axios
+          .delete("http://localhost:5000/api/groups/" + id)
+          .then((result) => console.log(result.data));
+      }
     });
-
-    console.log(response);
   };
 
   handleShow = (member) => {
@@ -87,11 +94,7 @@ class ViewResearchGroup extends Component {
       }
     );
 
-    swal({
-      text: "Panel member Allocated.",
-      icon: "success",
-      timer: "2000",
-    });
+    alert("Panel member allocated");
     const data = await response.json(jsonOb);
   };
 

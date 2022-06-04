@@ -13,7 +13,7 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
-    title: "Add a Member",
+    title: "Register a Member",
     path: "/registerMember",
     icon: <IoIcons.IoMdTime />,
   },

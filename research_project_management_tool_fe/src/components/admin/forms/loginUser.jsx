@@ -45,6 +45,7 @@ class LoginUser extends FormSuper {
       window.location.href = "/";
     } else {
       console.log("notlog");
+      alert("Please Enter the Right Email and password");
     }
 
     // console.log(data);

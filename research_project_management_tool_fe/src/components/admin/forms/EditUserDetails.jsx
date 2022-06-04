@@ -22,6 +22,7 @@ class EditUserDetails extends FormSuper {
     memberTypes: [
       { id: 1, type: "Panel Member" },
       { id: 2, type: "Supervisor" },
+      { id: 3, type: "Admin" },
     ],
   };
 
@@ -32,8 +33,8 @@ class EditUserDetails extends FormSuper {
     email: Joi.string().required(),
     address: Joi.string().required(),
     contactNumber: Joi.string().required(),
-    age: Joi.string().required(),
-    password: Joi.date().required(),
+    age: Joi.number().required(),
+    password: Joi.string().required(),
     type: Joi.string().required(),
   };
 
@@ -107,7 +108,7 @@ class EditUserDetails extends FormSuper {
               </div>
             </div>
 
-            {this.renderButton("Update User")}
+            {this.renderButton("Update Member")}
           </form>
         </div>
       </React.Fragment>

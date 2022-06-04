@@ -2,24 +2,49 @@ import React from "react";
 import styled from "styled-components";
 import { cardShadow, hoverEffect, themeColor } from "../utils";
 
-function Projects({reservedRooms}) {
+function Projects({ adminCount, panelCount, supervisorCount, studentCount }) {
   return (
     <YourProjects>
-
-      {reservedRooms.map(r => (
-
-        <Project>
-          <Avatar>
-          {/* <img src={AvatarImage} alt="" /> */}
-        </Avatar>
+      <Project>
+        <Avatar>{/* <img src={AvatarImage} alt="" /> */}</Avatar>
         <Detail>
-        <Title><div style={{fontSize: 18}}>{`ROOM NO: ${r.roomNo}`}</div></Title>
-       <SubTitle><div style={{fontSize: 17}}>{`START: ${r.startDate} END: ${r.endDate}`}</div></SubTitle>
-       </Detail>
+          <Title>
+            <div style={{ fontSize: 18 }}>
+              No of Administrators: {adminCount}
+            </div>
+          </Title>
+        </Detail>
+      </Project>
+      <Project>
+        <Avatar>{/* <img src={AvatarImage} alt="" /> */}</Avatar>
+        <Detail>
+          <Title>
+            <div style={{ fontSize: 18 }}>
+              No of Panel Members: {panelCount}
+            </div>
+          </Title>
+        </Detail>
+      </Project>
+      <Project>
+        <Avatar>{/* <img src={AvatarImage} alt="" /> */}</Avatar>
+        <Detail>
+          <Title>
+            <div style={{ fontSize: 18 }}>
+              {" "}
+              No of Supervisors: {supervisorCount}
+            </div>
+          </Title>
+        </Detail>
+      </Project>
+      <Project>
+        <Avatar>{/* <img src={AvatarImage} alt="" /> */}</Avatar>
+        <Detail>
+          <Title>
+            <div style={{ fontSize: 18 }}> No of Students: {studentCount}</div>
+          </Title>
+        </Detail>
       </Project>
 
-      ))}
-      
       {/* <Project>
         <Avatar>
           <img src={AvatarImage2} alt="" />

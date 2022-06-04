@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import TableDocument from "../../components/admin/tables/tableDocument";
+import swal from "sweetalert";
+import axios from "axios";
 
 class ViewUploadedDocuments extends Component {
   state = {
@@ -9,20 +11,25 @@ class ViewUploadedDocuments extends Component {
   };
 
   handleRemove = async (id) => {
-    console.log("handle remove", id);
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((result) => {
+      if (result) {
+        console.log("handle remove", id);
 
-    const documents = this.state.documents.filter(
-      (document) => document._id !== id
-    );
-    this.setState({ documents });
-
-    const response = await fetch("http://localhost:5000/api/documents/" + id, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+        const documents = this.state.documents.filter(
+          (document) => document._id !== id
+        );
+        this.setState({ documents });
+        axios
+          .delete("http://localhost:5000/api/documents/" + id)
+          .then((result) => console.log(result.data));
+      }
     });
-
-    // const data = await response.json();
-    console.log(response);
   };
 
   handleShow = (member) => {

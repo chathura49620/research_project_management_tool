@@ -68,8 +68,6 @@ exports.getLogins = async (req, res) => {
 
 exports.RemoveUser = async (req, res) => {
   const id = req.params.id;
-
-  // const responce =  await User.deleteOne({_id: id});
   try {
     await User.deleteOne({ _id: id });
     res.json({ status: "ok" });

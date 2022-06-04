@@ -9,22 +9,47 @@ import styled from "styled-components";
 
 class AdminDashboard extends Component {
   state = {
-    reservedRooms: [],
-    availableRooms: [],
+    members: [],
+    documents: [],
+    groups: [],
+    adminCount: 0,
+    panelCount: 0,
+    supervisorCount: 0,
+    studentCount: 0,
   };
 
   async componentDidMount() {
-    // const response = await fetch("http://localhost:8083/reservedRooms", {
-    //   method: "GET",
-    // });
-    // const data = await response.json();
-    // const response2 = await fetch("http://localhost:8083/rooms", {
-    //   method: "GET",
-    // });
-    // const data2 = await response2.json();
-    // const availableRooms = data2.filter(d => d.status === "available")
-    // this.setState({reservedRooms: data, availableRooms: availableRooms});
-    // console.log(data);
+    const response = await fetch("http://localhost:5000/api/users", {
+      method: "GET",
+    });
+    const data = await response.json();
+    const response2 = await fetch("http://localhost:5000/api/documents/", {
+      method: "GET",
+    });
+
+    const data2 = await response2.json();
+
+    const response3 = await fetch("http://localhost:5000/api/groups/", {
+      method: "GET",
+    });
+
+    const data3 = await response3.json();
+
+    const adminCount = data.filter((d) => d.type == "Admin").length;
+    const panelCount = data.filter((d) => d.type == "Panel Member").length;
+    const supervisorCount = data.filter((d) => d.type == "Supervisor").length;
+    const studentCount = data.filter((d) => d.type == "Student").length;
+
+    this.setState({
+      members: data,
+      documents: data2,
+      adminCount,
+      panelCount,
+      supervisorCount,
+      studentCount,
+      groups: data3,
+    });
+    console.log(data, data2);
   }
 
   logout() {
@@ -38,9 +63,14 @@ class AdminDashboard extends Component {
     return (
       <Container>
         <MainContent
-          NumOfReserved={this.state.reservedRooms.length}
-          NumOfAvailable={this.state.availableRooms.length}
-          reservedRooms={this.state.reservedRooms}
+          NumOfReserved={this.state.members.length}
+          NumOfAvailable={this.state.documents.length}
+          reservedRooms={this.state.members}
+          adminCount={this.state.adminCount}
+          panelCount={this.state.panelCount}
+          supervisorCount={this.state.supervisorCount}
+          studentCount={this.state.studentCount}
+          numOfGroups={this.state.groups.length}
         />
       </Container>
     );

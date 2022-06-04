@@ -3,15 +3,10 @@ import Joi from "joi-browser";
 import axios from "axios";
 import swal from "sweetalert";
 
-
-import FormSuper from './../reusables/formsuper';
-
-
+import FormSuper from "./../reusables/formsuper";
 
 class RegisterUser extends FormSuper {
-  state = { 
-
-
+  state = {
     data: {
       firstName: "",
       lastName: "",
@@ -23,35 +18,28 @@ class RegisterUser extends FormSuper {
       type: "",
     },
     errors: {},
-    memberTypes: [{id: 1, type: 'Panel Member'}, {id: 2, type: 'Supervisor'}]
+    memberTypes: [
+      { id: 1, type: "Panel Member" },
+      { id: 2, type: "Supervisor" },
+    ],
+  };
 
-   } 
-
-   schema = {
+  schema = {
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
     email: Joi.string().required(),
     address: Joi.string().required(),
     contactNumber: Joi.string().required(),
-    age: Joi.string().required(),
-    password: Joi.date().required(),
+    age: Joi.number().required(),
+    password: Joi.string().required(),
     type: Joi.string().required(),
-
   };
 
-  componentDidMount(){
+  componentDidMount() {}
 
-
-
-
-  }
-
-   async doSubmit(){
-
-    
+  async doSubmit() {
     const ob = this.state.data;
     const jsonOb = {
-
       firstName: ob.firstName,
       lastName: ob.lastName,
       email: ob.email,
@@ -60,12 +48,9 @@ class RegisterUser extends FormSuper {
       age: ob.age,
       password: ob.password,
       type: ob.type,
+    };
 
-    }
-    
-
-
-    console.log("submitted")
+    console.log("submitted");
 
     const response = await fetch("http://localhost:5000/api/users/", {
       method: "POST",
@@ -75,50 +60,40 @@ class RegisterUser extends FormSuper {
 
     const data = await response.json();
 
-    
-    if (data.status === 'ok') {
+    if (data.status === "ok") {
       alert("Register successfull");
-      //window.location.href = "/dashboard";
+      window.location.href = "/viewMembers";
     } else {
-      alert("this email is allready used");
+      alert("This email is allready used");
     }
 
     console.log(data);
-
-
-
   }
 
-  render() { 
+  render() {
     return (
       <React.Fragment>
-    
-    <div className="row my-4">
-      <div className="col-3"></div>
-      <div className="col" style={{backgroundColor:"#F2F3F4"}}>
-      <h1>Register new Member</h1>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderInput("firstName", "First Name")}
-            {this.renderInput("lastName", "Last Name")}
-            {this.renderInput("email", "Email Address")}
-            {this.renderInput("address", "Living Address")}
-            {this.renderInput("contactNumber", "Contact Number")}
-            {this.renderInput("age", "Age")}
-            {this.renderInput("password", "password")}
-            {this.renderSelect("type", "Type", this.state.memberTypes)}
-            {this.renderButton("Register User")}
-          </form>
-        
-
-      </div>
-      <div className="col-4"></div>
-    </div>
-          
-        
-    </React.Fragment>
-
+        <div className="row my-4">
+          <div className="col-3"></div>
+          <div className="col" style={{ backgroundColor: "#F2F3F4" }}>
+            <h1>Register new Member</h1>
+            <form onSubmit={this.handleSubmit}>
+              {this.renderInput("firstName", "First Name")}
+              {this.renderInput("lastName", "Last Name")}
+              {this.renderInput("email", "Email Address")}
+              {this.renderInput("address", "Living Address")}
+              {this.renderInput("contactNumber", "Contact Number")}
+              {this.renderInput("age", "Age")}
+              {this.renderInput("password", "password")}
+              {this.renderSelect("type", "Type", this.state.memberTypes)}
+              {this.renderButton("Register Member")}
+            </form>
+          </div>
+          <div className="col-4"></div>
+        </div>
+      </React.Fragment>
     );
   }
 }
- 
+
 export default RegisterUser;

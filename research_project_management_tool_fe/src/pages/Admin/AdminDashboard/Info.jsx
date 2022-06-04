@@ -2,16 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import Badge from "./Badge";
 import { cardShadow, hoverEffect, themeColor } from "../utils";
-function Info({NumOfReserved, NumOfAvailable}) {
+function Info({ NumOfReserved, NumOfAvailable }) {
   return (
     <InfoCard>
       <Card>
         <CardContent>
           <Row>
-            <Digit><div style={{fontSize: 15}}>{NumOfReserved}</div></Digit>
+            <Digit>
+              <div style={{ fontSize: 15 }}>{NumOfReserved}</div>
+            </Digit>
             <InfoContainer>
-              <Title ><div style={{fontSize: 17}}>RESERVED</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>In top 20%</div></SubTitle>
+              <Title>
+                <div style={{ fontSize: 17 }}>Members</div>
+              </Title>
             </InfoContainer>
           </Row>
         </CardContent>
@@ -19,10 +22,13 @@ function Info({NumOfReserved, NumOfAvailable}) {
       <Card>
         <CardContent>
           <Row>
-            <Digit><div style={{fontSize: 15}}>{NumOfAvailable}</div></Digit>
+            <Digit>
+              <div style={{ fontSize: 15 }}>{NumOfAvailable}</div>
+            </Digit>
             <InfoContainer>
-              <Title><div style={{fontSize: 17}}>AVAILABLE</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>In top 20%</div></SubTitle>
+              <Title>
+                <div style={{ fontSize: 17 }}>Documents</div>
+              </Title>
             </InfoContainer>
           </Row>
           {/* <Row justify>

@@ -8,7 +8,16 @@ import ProjectRecommendation from "./ProjectRecommendation";
 import Projects from "./Projects";
 import Invoices from "./Invoices";
 
-function MainContent({NumOfReserved, NumOfAvailable, reservedRooms}) {
+function MainContent({
+  NumOfReserved,
+  NumOfAvailable,
+  reservedRooms,
+  adminCount,
+  panelCount,
+  supervisorCount,
+  studentCount,
+  numOfGroups,
+}) {
   return (
     <Container>
       <Navbar />
@@ -16,26 +25,32 @@ function MainContent({NumOfReserved, NumOfAvailable, reservedRooms}) {
         <SectionOne>
           <ColumnOne1>
             <Earnings />
-            <Info NumOfReserved={NumOfReserved} NumOfAvailable={NumOfAvailable}/>
+            <Info
+              NumOfReserved={NumOfReserved}
+              NumOfAvailable={NumOfAvailable}
+            />
           </ColumnOne1>
           <ColumnTwo1>
-            <TitleText><div style={{fontSize: 25}}>Your Reservations</div></TitleText>
-            <Projects reservedRooms={reservedRooms}/>
+            <TitleText>
+              <div style={{ fontSize: 25 }}>Members</div>
+            </TitleText>
+            <Projects
+              adminCount={adminCount}
+              panelCount={panelCount}
+              supervisorCount={supervisorCount}
+              studentCount={studentCount}
+            />
           </ColumnTwo1>
         </SectionOne>
         <SectionTwo>
           <ColumnOne2>
             <InvoiceContainer>
-              <TitleText><div style={{fontSize: 25}}>Recent Invoices</div></TitleText>
-              <Invoices />
+              <TitleText>
+                <div style={{ fontSize: 25 }}>Registered Groups</div>
+              </TitleText>
+              <Invoices numOfGroups={numOfGroups} />
             </InvoiceContainer>
-           
           </ColumnOne2>
-          <ColumnTwo2>
-            <TitleText><div style={{fontSize: 25}}>Recommended Project</div></TitleText>
-            {/* <ProjectRecommendation /> */}
-             <JoinSlack />
-          </ColumnTwo2>
         </SectionTwo>
       </SubContainer>
     </Container>

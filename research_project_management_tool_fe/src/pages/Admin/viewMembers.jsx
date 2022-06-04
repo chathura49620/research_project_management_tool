@@ -4,6 +4,8 @@ import EditModal from "../../components/admin/reusables/editModal";
 import RegisterUser from "../../components/admin/forms/registerUser";
 import { Modal, Button } from "react-bootstrap";
 import EditUserDetails from "../../components/admin/forms/EditUserDetails";
+import swal from "sweetalert";
+import axios from "axios";
 
 class ViewMember extends Component {
   state = {
@@ -13,20 +15,22 @@ class ViewMember extends Component {
   };
 
   handleRemove = async (id) => {
-    console.log("handle remove", id);
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((result) => {
+      if (result) {
+        const users = this.state.users.filter((user) => user._id !== id);
+        this.setState({ users });
 
-    const users = this.state.users.filter((user) => user._id !== id);
-    this.setState({ users });
-
-    const response = await fetch("http://localhost:5000/api/users/" + id, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+        axios
+          .delete("http://localhost:5000/api/users/" + id)
+          .then((result) => console.log(result.data));
+      }
     });
-
-    // const data = await response.json();
-    console.log(response);
-
-    //db delete request
   };
 
   handleShow = (member) => {

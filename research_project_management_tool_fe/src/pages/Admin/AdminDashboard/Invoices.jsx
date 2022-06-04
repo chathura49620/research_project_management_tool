@@ -3,40 +3,13 @@ import styled from "styled-components";
 import Badge from "./Badge";
 import { cardShadow, hoverEffect } from "../utils";
 
-function Invoices() {
+function Invoices({ numOfGroups }) {
   return (
     <InvoicesContainer>
       <CardContent>
-        <Invoice>
-          <Info>
-            <Avatar>
-              {/* <img src={AvatarImage} alt="" /> */}
-            </Avatar>
-            <TextContainer>
-              <Title><div style={{fontSize: 18}}>Alexander Williams</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>ABC Holdings</div></SubTitle>
-            </TextContainer>
-          </Info>
-          <Container>
-            <Badge content="Paid" paid />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
-          </Container>
-        </Invoice>
-        <Invoice>
-          <Info>
-            <Avatar>
-              {/* <img src={AvatarImage2} alt="" /> */}
-            </Avatar>
-            <TextContainer>
-              <Title><div style={{fontSize: 18}}>John Philips</div></Title>
-              <SubTitle><div style={{fontSize: 17}}>Inchor Associates</div></SubTitle>
-            </TextContainer>
-          </Info>
-          <Container>
-            <Badge content="Late" late />
-            <Price><div style={{fontSize: 17}}>$ 1,200.87</div></Price>
-          </Container>
-        </Invoice>
+        <div style={{ fontSize: "18" }}>
+          No of Registered Groups: {numOfGroups}
+        </div>
       </CardContent>
     </InvoicesContainer>
   );

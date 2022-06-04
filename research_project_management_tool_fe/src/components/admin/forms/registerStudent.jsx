@@ -26,8 +26,8 @@ class RegisterStudent extends FormSuper {
     email: Joi.string().required(),
     address: Joi.string().required(),
     contactNumber: Joi.string().required(),
-    age: Joi.string().required(),
-    password: Joi.date().required(),
+    age: Joi.number().required(),
+    password: Joi.string().required(),
     type: Joi.string(),
   };
 
@@ -81,7 +81,7 @@ class RegisterStudent extends FormSuper {
               {this.renderInput("contactNumber", "Contact Number")}
               {this.renderInput("age", "Age")}
               {this.renderInput("password", "password")}
-              {this.renderButton("Register User")}
+              {this.renderButton("Register Me")}
             </form>
           </div>
           <div className="col-4"></div>
