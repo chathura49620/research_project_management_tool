@@ -3,6 +3,7 @@ import Joi from "joi-browser";
 import axios from "axios";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import LoginImage from "./../../../assests/research.svg";
 
 import FormSuper from "./../reusables/formsuper";
 
@@ -65,9 +66,10 @@ class LoginUser extends FormSuper {
               {this.renderButton("Sign in")}
               <Link to="/registerStudent">Sign in as a Student</Link>
             </form>
-
           </div>
-          <div className="col-4"></div>
+          <div className="col-4">
+            <img style={{ width: "60%", height: "60%" }} src={LoginImage}></img>
+          </div>
         </div>
       </React.Fragment>
     );

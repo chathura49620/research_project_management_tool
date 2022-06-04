@@ -3,15 +3,10 @@ import Joi from "joi-browser";
 import axios from "axios";
 import swal from "sweetalert";
 
-
-import FormSuper from './../reusables/formsuper';
-
-
+import FormSuper from "./../reusables/formsuper";
 
 class EditUserDetails extends FormSuper {
-  state = { 
-
-
+  state = {
     data: {
       _id: "",
       firstName: "",
@@ -24,11 +19,13 @@ class EditUserDetails extends FormSuper {
       type: "",
     },
     errors: {},
-    memberTypes: [{id: 1, type: 'Panel Member'}, {id: 2, type: 'Supervisor'}]
+    memberTypes: [
+      { id: 1, type: "Panel Member" },
+      { id: 2, type: "Supervisor" },
+    ],
+  };
 
-   } 
-
-   schema = {
+  schema = {
     _id: Joi.string(),
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
@@ -38,15 +35,13 @@ class EditUserDetails extends FormSuper {
     age: Joi.string().required(),
     password: Joi.date().required(),
     type: Joi.string().required(),
-
   };
 
-  componentDidMount(){
-
+  componentDidMount() {
     const user = this.props.editOb;
-    console.log(user, "edittttttttt")
+    console.log(user, "edittttttttt");
     const data = {
-      _id: user._id,  
+      _id: user._id,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
@@ -55,15 +50,11 @@ class EditUserDetails extends FormSuper {
       age: user.age,
       password: user.password,
       type: user.type,
-    }
-    this.setState({data})
-
-
+    };
+    this.setState({ data });
   }
 
-   async doSubmit(){
-
-    
+  async doSubmit() {
     const ob = this.state.data;
     const jsonOb = {
       firstName: ob.firstName,
@@ -74,12 +65,11 @@ class EditUserDetails extends FormSuper {
       age: ob.age,
       password: ob.password,
       type: ob.type,
+    };
 
-    }
-    
-    console.log("submitted")
+    console.log("submitted");
 
-    const response = await fetch("http://localhost:5000/api/users/"+ ob._id, {
+    const response = await fetch("http://localhost:5000/api/users/" + ob._id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(jsonOb),
@@ -87,9 +77,7 @@ class EditUserDetails extends FormSuper {
 
     const data = await response.json(jsonOb);
 
-    
-    if (data.status === 'ok') {
-     
+    if (data.status === "ok") {
       this.props.closeAndSetEditedOb(ob);
       //window.location.href = "/dashboard";
     } else {
@@ -97,43 +85,34 @@ class EditUserDetails extends FormSuper {
     }
 
     console.log(data);
-
-
-
   }
 
-  render() { 
+  render() {
     return (
       <React.Fragment>
-    
-      <div style={{backgroundColor:"#F2F3F4"}}>
-    
+        <div style={{ backgroundColor: "#F2F3F4" }}>
           <form onSubmit={this.handleSubmit}>
             <div className="row">
-                <div className="col">
+              <div className="col">
                 {this.renderInput("firstName", "First Name")}
-            {this.renderInput("lastName", "Last Name")}
-            {this.renderInput("email", "Email Address")}
-            {this.renderInput("address", "Living Address")}
-                </div>
-                <div className="col">
+                {this.renderInput("lastName", "Last Name")}
+                {this.renderInput("email", "Email Address")}
+                {this.renderInput("address", "Living Address")}
+              </div>
+              <div className="col">
                 {this.renderInput("contactNumber", "Contact Number")}
-            {this.renderInput("age", "Age")}
-            {this.renderInput("password", "password")}
-            {this.renderSelect("type", "Type", this.state.memberTypes)}
-                </div>
+                {this.renderInput("age", "Age")}
+                {this.renderInput("password", "password")}
+                {this.renderSelect("type", "Type", this.state.memberTypes)}
+              </div>
             </div>
-           
-            
-            {this.renderButton("Register User")}
-          </form>
-    </div>
-          
-        
-    </React.Fragment>
 
+            {this.renderButton("Update User")}
+          </form>
+        </div>
+      </React.Fragment>
     );
   }
 }
- 
+
 export default EditUserDetails;

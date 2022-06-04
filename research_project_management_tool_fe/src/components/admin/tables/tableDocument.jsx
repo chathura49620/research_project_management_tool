@@ -16,7 +16,11 @@ const TableDocument = ({ filteredItems, onRemove }) => {
             <th scope="row">{filteredItems.indexOf(document) + 1}</th>
             <td>{document.documentName}</td>
             <td>
-              <a href={`/uploads/${document.documentName}`} download>
+              <a
+                className="btn btn-sm btn-primary"
+                href={`/uploads/${document.documentName}`}
+                download
+              >
                 Download
               </a>
             </td>

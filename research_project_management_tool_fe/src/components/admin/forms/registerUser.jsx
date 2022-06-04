@@ -93,7 +93,7 @@ class RegisterUser extends FormSuper {
     return (
       <React.Fragment>
     
-    <div className="row mt-4">
+    <div className="row my-4">
       <div className="col-3"></div>
       <div className="col" style={{backgroundColor:"#F2F3F4"}}>
       <h1>Register new Member</h1>
